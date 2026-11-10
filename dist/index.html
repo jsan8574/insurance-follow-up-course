@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claim Lab Prep · Physician &amp; Hospital Billing</title><style>:root{--nav:#132638;--nav-2:#1d344a;--ink:#172a3b;--muted:#52677b;--line:#d8e3eb;--ground:#f0f5f8;--white:#fff;--accent:#096956;--mint:#e6f6ef;--blue:#245da4;--blue-bg:#edf4ff;--amber:#8a4d0f;--amber-bg:#fff3de;--radius:14px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--ground);color-scheme:light}
+<title>Insurance Follow-Up And Denial Management Fundamentals</title><style>:root{--nav:#132638;--nav-2:#1d344a;--ink:#172a3b;--muted:#52677b;--line:#d8e3eb;--ground:#f0f5f8;--white:#fff;--accent:#096956;--mint:#e6f6ef;--blue:#245da4;--blue-bg:#edf4ff;--amber:#8a4d0f;--amber-bg:#fff3de;--radius:14px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--ground);color-scheme:light}
 *{box-sizing:border-box}body{margin:0;line-height:1.54;font-size:15px}a{color:#185a90;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #bd7320;outline-offset:3px}h1,h2,h3,p,dl,dd{margin:0}h1,h2,h3{line-height:1.15;letter-spacing:-.026em}h1{font-size:clamp(2rem,4vw,3.2rem)}h2{font-size:1.45rem}h3{font-size:1.06rem}p{margin:0 0 9px}li+li{margin-top:5px}.sprite{width:0;height:0;position:absolute}.icon,.brand svg,.lane svg,.encounter svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.skip{position:absolute;left:-1000px}.skip:focus{z-index:20;left:12px;top:12px;background:#fff;padding:8px}
 .top{height:74px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,38px);background:var(--nav);border-bottom:1px solid #385267;color:#eaf6ff}.brand{display:flex;gap:12px;align-items:center;color:white;text-decoration:none;font-weight:760;font-size:1.13rem;line-height:1.14}.brand svg{width:29px;height:29px;color:#8fdbc8}.brand small{display:block;margin-top:4px;color:#bdd6e7;font-size:.64rem;font-weight:640;text-transform:none;letter-spacing:.14em}.top-progress{width:min(220px,40vw);font-weight:690;font-size:.78rem}.top-progress progress{display:block;width:100%;height:7px;margin-top:6px;border:0;border-radius:20px;overflow:hidden;background:#40596c;color:#7cdabc}.top-progress progress::-webkit-progress-bar{background:#40596c}.top-progress progress::-webkit-progress-value{background:#79d9ba;transition:width .34s ease}.top-progress progress::-moz-progress-bar{background:#79d9ba}.app{display:grid;grid-template-columns:244px minmax(0,1fr);min-height:calc(100vh - 74px)}.side{position:sticky;top:0;align-self:start;min-height:100vh;padding:21px 13px 24px;background:var(--nav);color:#eef7fa}.side summary{cursor:pointer;color:#e2f1f9;font-size:.83rem;font-weight:760;padding:0 7px}.nav-group{margin:20px 8px 5px;text-transform:none;letter-spacing:.12em;font-size:.61rem;font-weight:800;color:#aac6d9}.nav-item{display:grid;grid-template-columns:18px minmax(0,1fr) 14px;align-items:center;gap:9px;color:#f0f6fb;text-decoration:none;font-size:.81rem;line-height:1.3;padding:8px 7px;border:1px solid transparent;border-radius:7px;margin:2px 0}.nav-item .icon{width:17px;height:17px;color:#bad3e4}.nav-item:hover{background:#203b52}.nav-item[aria-current=page]{background:#e7f8f1;border-color:#acd6c8;color:#153f38;font-weight:750}.nav-item[aria-current=page] .icon{color:#14755e}.nav-status{color:#8ae1c0;font-weight:800}.nav-item[aria-current=page] .nav-status{color:#0d6a54}.save-status{margin:24px 8px 0;color:#b9d0df;font-size:.72rem}
 main{width:min(100%,1190px);min-width:0;margin:0 auto;padding:29px clamp(19px,3.5vw,42px) 44px}.eyebrow{display:block;font-size:.69rem;font-weight:800;letter-spacing:.13em;text-transform:none;color:var(--accent);margin-bottom:8px}.fine{color:var(--muted);font-size:.8rem;margin:12px 0}.hero{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(190px, .84fr);align-items:center;gap:22px;overflow:hidden;background:radial-gradient(ellipse at 100% 70%,#185b53 0%,transparent 58%),linear-gradient(135deg,#152f49,#12283e 65%);color:#fff;border-radius:20px;padding:clamp(24px,4.4vw,51px);box-shadow:0 17px 44px #15355322}.hero .eyebrow{color:#ace4d5}.hero h1{font-size:clamp(2.15rem,4.6vw,4.25rem);letter-spacing:-.052em}.hero em{font-style:normal;color:#b9f0dc}.hero p{color:#dcebf3;font-size:.98rem;max-width:56ch;margin:14px 0 19px}.hero .primary{background:#a8eed7;color:#10392f;border-color:#a8eed7}.hero .primary:hover{background:#c6f8e7}.hero-meta{display:flex;flex-wrap:wrap;gap:9px 14px;color:#d1e5ef;font-size:.72rem;margin-top:14px}.hero-meta span+span::before{content:"·";margin-right:14px;color:#a1c9c1}.hero-art svg{display:block;width:100%;height:auto}.hero-wire{animation:trace 8s linear infinite}.hero-card{transform-box:fill-box;transform-origin:center;animation:hovercard 5s ease-in-out infinite}.hero-card.right{animation-delay:-2.5s}@keyframes trace{to{stroke-dashoffset:-44}}@keyframes hovercard{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.unit:not([hidden])>.lesson-head,.unit:not([hidden])>.hero{animation:enter .28s ease-out}
@@ -381,6 +381,94 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 @media(prefers-reduced-motion:reduce){.is-celebrating .confetti i{animation:none}}
 
 .denial-compare tbody th{min-width:120px;color:#69381e;background:#fff3e8;text-align:left}.denial-compare tbody td{min-width:200px;vertical-align:top}.learner-profile .fine{color:#3d5b6b}
+
+/* Course navigation, welcome, and learner notes */
+.top{background:linear-gradient(110deg,#102638,#153949 74%,#194b50)}
+.brand{font-size:clamp(.86rem,1.6vw,1.12rem);max-width:min(62vw,540px)}
+.brand svg{flex:none}
+.side{
+  background:radial-gradient(ellipse at top right,#225363 0%,transparent 48%),linear-gradient(160deg,#102433,#152c3d 55%,#173948);
+  border-right:1px solid #355267;min-height:0;max-height:100vh;overflow:auto;scrollbar-color:#4f7486 transparent
+}
+.side summary{padding:9px 10px;border-radius:9px;background:#ffffff0b;border:1px solid #ffffff20;color:#f3fbff}
+.nav-group{font-size:.65rem;color:#a9c9d8;margin:17px 7px 7px;letter-spacing:.09em}
+.side .nav-item{
+  display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:41px;
+  margin:3px 0;padding:5px 7px;border:1px solid transparent;border-radius:9px;color:#e4eff7;line-height:1.22
+}
+.side .nav-item:hover{background:#ffffff0e;border-color:#ffffff24;color:#fff}
+.side .nav-item[aria-current]{background:linear-gradient(115deg,#dff8f0,#e8f7fc);border-color:#8edac6;color:#113c42;box-shadow:0 6px 16px #0b222a5c}
+.nav-icon{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;border:1px solid #ffffff24;background:#62e7d428;color:#9df3e1}
+.nav-icon .icon{width:16px;height:16px}
+.nav-icon[data-palette="1"]{background:#6ba7fb30;color:#c1dcff}
+.nav-icon[data-palette="2"]{background:#ae9ffa30;color:#e1d5ff}
+.nav-icon[data-palette="3"]{background:#58d9ae27;color:#a1f0cf}
+.nav-icon[data-palette="4"]{background:#ffc47625;color:#ffe0ae}
+.nav-icon[data-palette="5"]{background:#f99c8629;color:#ffc4b6}
+.side .nav-item[aria-current] .nav-icon{background:#c2ebe0;border-color:#9acdc0;color:#0d6157}
+.nav-status{color:#9df3cf}
+.side .nav-item[aria-current] .nav-status{color:#136d58}
+.section-progress{margin:13px 8px 2px;font-size:.74rem;font-weight:750;color:#d2e9f3}
+.part-progress{font-size:.73rem;font-weight:700;color:#4b6371;margin:4px 0 10px}
+.walkthrough-transcript>summary,.walkthrough-transcript>summary::after{color:#5a6d79;font-weight:600;font-size:.76rem}
+.walkthrough-transcript>summary:hover{color:#214c61;text-decoration:underline}
+.hero h1{font-size:clamp(1.95rem,4vw,3.85rem);line-height:1.04;text-wrap:balance}
+.pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:15px}
+.pager-link{display:flex;align-items:center;gap:10px;border:1px solid #cadce6;background:#fff;border-radius:12px;padding:10px;color:#294e64;text-decoration:none;min-height:61px}
+.pager-link:hover{border-color:#578b9b;box-shadow:0 4px 12px #25475b18}
+.pager-next{grid-column:2;justify-content:space-between;background:linear-gradient(115deg,#dfedf7,#def6ec);color:#174758;border-color:#9cc6ca}
+.pager-copy{display:grid;gap:1px;line-height:1.25;font-size:.84rem}
+.pager-copy small{font-size:.69rem;color:#4d6978;font-weight:750}
+.pager-arrow{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;background:#e9f2f6;font-weight:750}
+.pager-next .pager-arrow{color:white;background:#185767}
+.exit-card{background:linear-gradient(155deg,var(--lane-bg),#fff 72%);border-top-width:1px;border-radius:16px;padding:clamp(14px,3vw,25px);box-shadow:0 8px 22px #1b394710}
+.decision-badge{display:inline-flex;align-items:center;gap:7px;color:var(--lane);background:#fff;border:1px solid var(--lane-border);padding:5px 10px;border-radius:20px;font-size:.75rem;font-weight:760}
+.decision-badge .icon{width:16px;height:16px}
+.exit-card .decision-scenario{color:#163749;font-weight:620;font-size:clamp(.94rem,1.6vw,1.1rem);line-height:1.55;margin:12px 0 16px;max-width:75ch}
+.exit-card .decision-options{gap:9px}
+.exit-card .decision{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#fff;min-height:47px;font-weight:640}
+.exit-card .decision::before{content:attr(data-option);display:grid;place-items:center;flex:none;width:25px;height:25px;border-radius:50%;background:var(--lane-bg);color:var(--lane);font-size:.73rem}
+.exit-card .decision:hover,.exit-card .decision[aria-pressed=true]{background:var(--lane-bg);border-color:var(--lane)}
+.learner-dialog{box-sizing:border-box;width:min(470px,calc(100% - 32px));border:1px solid #b1cdd8;border-radius:22px;padding:clamp(22px,5vw,36px);color:#183747;background:linear-gradient(150deg,#f6fbff,#fff 60%,#ebfaf6);box-shadow:0 22px 90px #0a2c4590}
+.learner-dialog::backdrop{background:#0b233ac9;backdrop-filter:blur(7px)}
+.welcome-accent{display:flex;align-items:center;gap:8px;color:#216859;font-size:.75rem;font-weight:750}
+.welcome-accent .icon{width:20px;height:20px}
+.learner-dialog h2{margin:8px 0 20px;font-size:1.8rem}
+.learner-dialog .learner-profile{color:#21485c;background:none;border:0;padding:0;margin:0;max-width:none}
+.learner-dialog .learner-profile label,.learner-dialog .fine{color:#395768}
+.learner-dialog .learner-profile .actions{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+.learner-dialog .learner-profile input{min-width:0;width:100%;background:#fff;color:#143747}
+.learner-dialog #learner-profile-status{color:#804322}
+.notepad-dock{position:fixed;right:clamp(12px,3vw,32px);bottom:clamp(12px,3vw,28px);z-index:8;display:grid;justify-items:end;gap:8px;max-width:calc(100vw - 24px)}
+.notes-toggle{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;min-height:43px;border:1px solid #7bd3bb;border-radius:24px;color:#fff;background:linear-gradient(120deg,#123a52,#175951);box-shadow:0 6px 24px #183b5266;font-size:.86rem;font-weight:750}
+.notes-toggle .icon{width:18px;height:18px;color:#a9efda}
+.course-notepad{width:min(365px,calc(100vw - 28px));max-height:min(580px,calc(100dvh - 85px));overflow:auto;background:#fcfeff;border:1px solid #a5c5ce;border-radius:15px;box-shadow:0 12px 44px #183b5259}
+.notepad-head{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;color:#fff;background:linear-gradient(110deg,#16334b,#1a5a55)}
+.notepad-head h2{font-size:1rem;margin:0;color:inherit}
+.notes-close{background:#ffffff15;border:1px solid #ffffff3d;color:#fff;border-radius:50%;width:30px;height:30px;font-size:1.18rem}
+.notepad-body{padding:12px 14px 15px}
+.notepad-body p{margin:0 0 10px}
+.notepad-body label{display:block;margin:8px 0 4px;font-size:.76rem;color:#254c62;font-weight:750}
+.notepad-body textarea,.notepad-body select{width:100%;font-size:.86rem;border:1px solid #a9bdcc;border-radius:6px;padding:7px 8px;color:#173d50;background:white}
+.notepad-body textarea{min-height:70px;max-height:34dvh;resize:vertical}
+.notepad-body .note-reading{margin:7px 0 0;padding:9px;background:#edf5f8;border-radius:7px;font-size:.84rem;white-space:pre-wrap;overflow-wrap:anywhere}
+.assessment-prerequisites{margin:12px 0;padding:12px;border-left:3px solid #b9783c;background:#fff5e8;border-radius:5px}
+.assessment-prerequisites p{margin:0 0 4px}
+.assessment-category-result{border:1px solid #c5d8e1;border-radius:8px;padding:8px 10px;margin:0;color:#254b61}
+main{padding-bottom:75px}
+@media(max-width:820px){
+  .side{max-height:45dvh;border-right:0}.side .nav-item{margin:1px}.pager-link{padding:7px;gap:6px}
+}
+@media(max-width:440px){
+  .brand svg{width:23px;height:23px}.learner-dialog .learner-profile .actions{grid-template-columns:1fr}
+}
+@media print{.notepad-dock,.learner-dialog{display:none!important}}
+
+#quick-check .practice-prelude{border-top:1px solid #b6d5d4;background:linear-gradient(120deg,#f1faf8,#fff 73%);box-shadow:0 7px 23px #17485a10}
+#quick-check .prelude-heading .icon{width:27px;height:27px;color:#237b70}
+#quick-check .practice-prelude .reading-fold{border-color:#b8d6d5;background:#fff}
+#quick-check .prelude-try{padding:8px 10px;border-radius:7px;background:#e6f5f0}
+@media(min-width:821px){.side{height:100vh}}
 </style></head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -398,21 +486,17 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M4 4h6a2 2 0 1 1 4 0h6v6a2 2 0 1 0 0 4v6h-6a2 2 0 1 0-4 0H4v-6a2 2 0 1 1 0-4z"/></symbol>
 </svg>
 <a class="skip" href="#content">Skip To Activity</a>
-<header class="top"><a href="#start" class="brand"><svg aria-hidden="true"><use href="#i-route"/></svg><span>Claim Lab Prep<small>Revenue Cycle Lab</small></span></a><div class="top-progress"><span id="progress-text">0 / 14 Drills Complete</span><progress id="progress" value="0" max="14" aria-label="Course Drills Complete"></progress><a id="completion-shortcut" href="#handoff" hidden>Course Complete</a><small id="capstone-progress">0 / 2 Independent Cases Met</small></div></header>
+<header class="top"><a href="#start" class="brand" id="course-brand"><svg aria-hidden="true"><use href="#i-route"/></svg><span>Insurance Follow-Up &amp; Denial Management<small>Fundamentals</small></span></a><div class="top-progress"><span id="progress-text">0 / 14 Drills Complete</span><progress id="progress" value="0" max="14" aria-label="Course Drills Complete"></progress><a id="completion-shortcut" href="#handoff" hidden>Course Complete</a><small id="capstone-progress">0 / 2 Independent Cases Met</small></div></header>
 <div class="app">
-<aside class="side"><details id="nav-details" open><summary>Course Map</summary><nav id="nav" aria-label="Course Sections"></nav></details><p id="save-status" class="save-status"></p></aside>
+<aside class="side"><details id="nav-details" open><summary>Course Map</summary><nav id="nav" aria-label="Course Sections"></nav></details><p id="section-progress" class="section-progress"></p><p id="save-status" class="save-status"></p></aside>
 <main id="content" tabindex="-1">
 <div id="lesson-position" class="lesson-position" hidden></div>
+<p id="part-progress" class="part-progress" hidden></p>
 <div id="reading-tools" class="reading-tools" hidden></div>
 <noscript><p class="callout">Enable JavaScript to play the activities. The desk guide remains readable below.</p></noscript>
-<section id="start" class="unit" data-nav="Mission Briefing" data-icon="flag" data-group="Start">
+<section id="start" class="unit" data-nav="Course Overview" data-icon="flag" data-group="Start">
 <div class="hero">
-<div class="hero-copy"><div class="eyebrow">Interactive Simulator Preparation</div><h1>Work The Claim.<br><em>Know The Next Move.</em></h1><p>Two billing tracks. Fourteen guided drills, two independent account cases, and a final assessment. Learn each concept from a worked example, then practice the decisions you’ll make in Insurance Follow-up and Denial Management.</p><p id="learner-welcome" hidden></p><a id="course-start-link" class="button primary" href="#lifecycle" hidden>Start The First Drill <span aria-hidden="true">→</span></a><form id="learner-profile" class="learner-profile">
-<label for="learner-name">Your Name</label>
-<div class="actions"><input id="learner-name" type="text" maxlength="80" autocomplete="name" required><button type="submit" class="button primary">Start The Course</button></div>
-<p id="welcome-hint" class="fine">Your name personalizes this course and identifies your completion and score for your facilitator.</p>
-<div id="learner-profile-status" role="status" hidden></div>
-</form><div class="hero-meta"><span>About 110–140 Minutes</span><span>Fictional Cases Only</span></div></div>
+<div class="hero-copy"><div class="eyebrow">Physician And Hospital Billing</div><h1>Insurance Follow-Up And <em>Denial Management</em> Fundamentals</h1><p>Two billing tracks. Fourteen guided drills, two independent account cases, and a final assessment. Learn each concept from a worked example, then practice the decisions you’ll make in Insurance Follow-up and Denial Management.</p><p id="learner-welcome" hidden></p><a id="course-start-link" class="button primary" href="#lifecycle" hidden>Start The First Drill <span aria-hidden="true">→</span></a><div class="hero-meta"><span>About 110–140 Minutes</span><span>Fictional Cases Only</span></div></div>
 
 <div class="hero-art" aria-hidden="true">
 <svg viewBox="0 0 375 270">
@@ -431,7 +515,7 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <a class="lane hosp" href="#hospital"><svg aria-hidden="true"><use href="#i-hosp"/></svg><div><span class="eyebrow">Institutional Claim · UB-04</span><h2>Hospital Billing</h2><p>Compare Bill Type, Revenue Lines, Orders And Approval. Choose The Facility Dispute Route.</p></div><span class="lane-arrow" aria-hidden="true">↗</span></a>
 </div>
 <div class="briefing"><div><strong>Start Together</strong><span>Connect stages, match evidence, rank the queue.</span></div><div><strong>Work Both Tracks</strong><span>Investigate one professional and one facility claim.</span></div><div><strong>Finish The Shift</strong><span>Work an unfamiliar account in each track, then take the final assessment.</span></div></div>
-<p class="fine">You can revisit any drill. Progress saves in this browser when local storage is available. No course data is sent to the simulator.</p>
+<p class="fine">Open each page and its reading panels to complete the section. Use the notepad to save details you’ll want during the final assessment. Progress saves in this browser.</p>
 </section>
 <section id="lifecycle" class="unit" data-nav="Connect The Claim" data-icon="route" data-group="Shared Foundations">
 <div class="lesson-head"><div class="eyebrow">01 · Connect The Dots</div><h1>Where Did The Claim Stop?</h1><p>Connect the stages in order, then match the claim formats and evidence fields for both billing tracks.</p></div>
@@ -593,20 +677,20 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <div id="game-flash" class="game"></div>
 </section>
 
-<section id="quick-check" class="unit" data-nav="Two-Track Decision Check" data-icon="flag" data-group="Lab Readiness">
+<section id="quick-check" class="unit" data-nav="Two-Track Decision Check" data-icon="flag" data-group="Practice And Assessment">
 <div class="lesson-head"><div class="eyebrow">08 · Finish The Shift</div><h1>Make Two Independent Decisions</h1><p>Complete both checks. Each one uses a new claim and a different owner. You can retry after reading the feedback.</p></div>
 <article class="practice-prelude" data-prepares="game-exit" aria-labelledby="learn-exit"><div class="prelude-heading"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg><div><div class="eyebrow">Learn First</div><h2 id="learn-exit">Choose The Action That Addresses The Proven Problem</h2></div></div><div class="prelude-concept"><span class="prelude-label">The Concept</span><p>Identify the last verified event, name who can move the claim, and choose a checkpoint that proves the action worked. Avoid routing by the balance or status label alone.</p></div><details class="reading-fold"><summary>Worked Example</summary><div class="prelude-example"><ol><li><strong>Evidence To Decision</strong><span>A payer requests a missing operative report. The correct report is available, and the notice names a records deadline. Send only the requested record to the designated queue.</span></li><li><strong>Decision To Follow-Up</strong><span>Verify receipt and association to the claim, then check adjudication. Receiving a file did not settle the balance.</span></li></ol></div></details><p class="prelude-try"><strong>Now Try It:</strong> Apply the same reasoning to one professional claim and one facility claim.</p></article>
 <div id="game-exit" class="game"></div>
 </section>
-<section id="cap-physician" class="unit capstone-unit phys" data-nav="Independent Physician Case" data-icon="phys" data-group="Lab Readiness">
+<section id="cap-physician" class="unit capstone-unit phys" data-nav="Independent Physician Case" data-icon="phys" data-group="Practice And Assessment">
 <div class="lesson-head lane-head phys"><div class="eyebrow">Independent Case · Physician</div><h1>Work A Professional Account</h1><p>As of <span data-date="0"></span>. Work from the supplied evidence. Submit your decisions and original note before viewing the model.</p></div>
 <div id="cap-phys-activity" class="capstone-workspace"></div>
 </section>
-<section id="cap-hospital" class="unit capstone-unit hosp" data-nav="Independent Hospital Case" data-icon="hosp" data-group="Lab Readiness">
+<section id="cap-hospital" class="unit capstone-unit hosp" data-nav="Independent Hospital Case" data-icon="hosp" data-group="Practice And Assessment">
 <div class="lesson-head lane-head hosp"><div class="eyebrow">Independent Case · Hospital</div><h1>Work A Facility Account</h1><p>As of <span data-date="0"></span>. Start from the queue, confirm the right claim and choose the payer source that answers your question.</p></div>
 <div id="cap-hosp-activity" class="capstone-workspace"></div>
 </section>
-<section id="guide" class="unit" data-nav="Desk Guide &amp; References" data-icon="doc" data-group="Lab Readiness">
+<section id="guide" class="unit" data-nav="Desk Guide &amp; References" data-icon="doc" data-group="Practice And Assessment">
 <div class="lesson-head"><div class="eyebrow">Printable Reference</div><h1>Insurance AR Desk Guide</h1><p>Bring this checklist to either billing track. Use current payer instructions, contract terms and organizational policy in live work.</p></div>
 <div class="card job-aid">
 <h2>For Every Claim, Know The Purpose</h2>
@@ -628,7 +712,7 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <details class="reading-fold"><summary>Claim Statuses And The Next Question</summary><dl><dt>Sent / Not On File</dt><dd>Which payer and version were sent? Find matched receipt before retransmitting.</dd><dt>Rejected</dt><dd>Which intake edit failed? Correct through the owner; obtain payer acceptance.</dd><dt>Accepted / Pending</dt><dd>What is still needed, and what is the verified turnaround? Set a date or escalate the overdue blocker.</dd><dt>Denied / Partially Paid</dt><dd>Which claim or lines, adjustment group, CARC and RARC? Verify whether this is a data error, payer decision, coverage issue or another cause.</dd><dt>Paid / Reversed</dt><dd>Does the current remit, EFT/check trace and posted transaction agree? Follow linked claim versions.</dd></dl></details>
 <details class="reading-fold"><summary>Coverage, Benefits And Approval</summary><p>Verify eligibility on the date of service, the specific benefit and network, limits and dated accumulators when relevant. Check coordination of benefits (who pays first) and prior payer adjudication. Match approval to the exact code, dates, units, site, provider and setting. Active coverage or approval alone does not guarantee payment.</p></details>
 <details class="reading-fold"><summary>Resolution Options And Deadlines</summary><p>Correct a verified claim-data error through Billing or authorized Coding. Request reprocessing for a supported payer error if that route is available. Use the designated appeal or payment-dispute route for a supported challenge. Route internal tasks with evidence and due dates; confirm payer escalation ownership and reference. Allow time only with verified status and a dated checkpoint. Transfer balances, issue patient communications, or request adjustments only when liability, policy and approvals support them.</p><p>Track original filing, replacement, records response, appeal and turnaround separately. Confirm the trigger, calendar or business days, and receipt rules. Informal review does not automatically extend a deadline. A packet receipt is not adjudication.</p></details>
-<details class="reading-fold"><summary>Use The Simulator After Practice</summary><p>Rank the queue, submit your rationale and review the coaching key. Open the account and review balance, remit, transactions and prior notes. Choose portal or verified payer contact based on the question and case requirements. Validate the reimbursement and resolution, review the appeal workspace, and submit a simulated packet only when the case calls for it. Post your note and save the learner output as instructed.</p></details>
+<details class="reading-fold"><summary>Run An Account Review</summary><p>Rank the queue and document the reason for your priority. Open the account and review the balance, remittance, transactions and prior notes. Choose the payer portal or a verified payer contact based on what you need to learn. Validate the payment and the proposed action. If an appeal is warranted, verify the route and receipt deadline. Document the action taken and the next follow-up.</p></details>
 <details class="reading-fold"><summary>Terms And Sources</summary><p><strong>AR:</strong> accounts receivable · <strong>DOS:</strong> date of service · <strong>ICN/DCN:</strong> payer claim control identifiers · <strong>POS:</strong> place of service · <strong>TOB:</strong> type of bill · <strong>ERA:</strong> electronic remittance advice (835) · <strong>CARC/RARC:</strong> adjustment reason and remittance remark codes · <strong>PR:</strong> patient responsibility · <strong>COB:</strong> coordination of benefits · <strong>EDI:</strong> electronic data interchange.</p><ul>
 <li><a href="https://www.cms.gov/files/document/mln006976-medicare-billing-cms-1500-837p.pdf">CMS · CMS-1500 And 837P</a> and <a href="https://www.cms.gov/files/document/837i-form-cms-1450-mln006926.pdf">CMS · CMS-1450 And 837I</a></li>
 <li><a href="https://www.cms.gov/Medicare/Coding-Billing/Place-of-Service-Codes">CMS · Professional Place Of Service</a></li>
@@ -638,23 +722,45 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 </ul><p>Use only fictional information here. In live work, use approved channels and share only what policy and the applicable privacy rules allow.</p></details>
 </div>
 </section>
-<section id="final-assessment" class="unit" data-nav="Final Assessment" data-icon="flag" data-group="Lab Readiness">
-<div class="lesson-head"><div class="eyebrow">Final Assessment · Physician And Hospital Billing</div><h1>Apply What You Learned</h1><p>Choose one answer per question. You can move between questions and change your answers until you submit. Your results will show what to revisit, and you can try again.</p></div>
+<section id="final-assessment" class="unit" data-nav="Final Assessment" data-icon="flag" data-group="Practice And Assessment">
+<div class="lesson-head"><div class="eyebrow">Final Assessment · Physician And Hospital Billing</div><h1>Apply What You Learned</h1><p>Choose one answer per question. You can move between questions and change your answers until you submit. Once you begin, earlier lessons close. You can refer to your saved notes throughout the assessment.</p></div>
 <p id="assessment-personal" class="callout orange-emphasis" hidden></p><div id="final-assessment-activity"></div>
 </section>
-<section id="handoff" class="unit" data-nav="Course Completion And PDF" data-icon="flag" data-group="Lab Readiness">
+<section id="handoff" class="unit" data-nav="Course Completion And PDF" data-icon="flag" data-group="Practice And Assessment">
 <div class="lesson-head"><h1 id="completion-heading">Course Completion</h1></div>
 <div class="card" id="completion-pending"><p id="completion-progress"></p><a class="button secondary" href="#final-assessment">Open Final Assessment</a></div>
 <div class="card completion-card" id="completion-card" hidden>
 <div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<p id="completion-score" class="completion-score"></p><p>Your course PDF includes the lessons, reference forms, and your saved practice and assessment answers.</p>
-<div class="actions"><button id="download-course-pdf" type="button" class="button primary">Download Course PDF</button><a class="button secondary" href="https://rcmbackendlab.revexpertone.com/" target="_blank" rel="noopener noreferrer">Open The Lab ↗</a></div>
+<p id="completion-score" class="completion-score"></p><p>Your course PDF includes the lessons, reference forms, saved answers and personal notes.</p>
+<div class="actions"><button id="download-course-pdf" type="button" class="button primary">Download Course PDF</button></div>
 <p id="pdf-status" role="status" hidden></p><p id="completion-sync" role="status" hidden></p><button id="retry-sheet" type="button" class="button secondary" hidden>Retry Google Sheets Save</button>
 </div>
 </section>
 <nav class="pager" id="pager" aria-label="Previous Or Next Section"></nav>
-<footer>Claim Lab Prep · Independent practice module · Fictional claims</footer>
+<footer>Insurance Follow-Up And Denial Management Fundamentals · Fictional Training Claims</footer>
 </main></div>
+<dialog id="learner-dialog" class="learner-dialog" aria-labelledby="welcome-title">
+<div class="welcome-accent"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg><span>Physician And Hospital Billing</span></div>
+<h2 id="welcome-title">Insurance Follow-Up And Denial Management Fundamentals</h2>
+<form id="learner-profile" class="learner-profile">
+<label for="learner-name">Your Name</label>
+<div class="actions"><input id="learner-name" type="text" autofocus maxlength="80" autocomplete="name" required><button type="submit" class="button primary">Start The Course</button></div>
+<p id="welcome-hint" class="fine">Your name personalizes the course and identifies your completion record for your facilitator.</p>
+<div id="learner-profile-status" role="status" hidden></div>
+</form>
+</dialog>
+<div class="notepad-dock">
+<aside id="course-notepad" class="course-notepad" aria-labelledby="notepad-title" hidden>
+<div class="notepad-head"><h2 id="notepad-title">My Notes</h2><button type="button" id="notes-close" class="notes-close" aria-label="Close Notes">×</button></div>
+<div class="notepad-body">
+<p class="fine">Write down the evidence, decision or rule you want to remember. Your notes stay available during the assessment and go into your PDF.</p>
+<label for="note-screen" id="note-screen-label">This Screen</label>
+<textarea id="note-screen" rows="5" maxlength="5000" placeholder="What would you want to remember from this screen?"></textarea>
+<label for="note-library">Saved Notes</label><select id="note-library"></select>
+<p id="note-reading" class="note-reading" hidden></p>
+</div></aside>
+<button type="button" id="notes-toggle" class="notes-toggle" aria-controls="course-notepad" aria-expanded="false" hidden><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><span>My Notes</span></button>
+</div>
 <script>const pdfLibrarySource="pdf-lib-0f9a5cad0794.js";
 const completionEndpoint="";
 const courseOrigin="https://rcm-back-end-lab-prep.jsan8574.chatgpt.site";
@@ -715,9 +821,9 @@ const deck = {
     ],
     prompt:"Which action advances this claim?",
     answers:[
-      ["Ask the payer to reprocess the unchanged claim.","The verified error is on the submitted claim. An unchanged reprocess would keep the wrong place of service."],
-      ["Route to professional Billing for the approved POS correction and linked replacement.","Correct. Send the coding determination and original ICN to professional Billing. Confirm payer acceptance, then verify the new adjudication."],
-      ["Move the balance to the patient because the service denied.","The remit assigned no patient share. Resolve the verified setting error and follow liability policy first."]
+      ["Request payer reprocessing of the original line using the encounter record.","The verified error is on the submitted claim. An unchanged reprocess would keep the wrong place of service."],
+      ["Send the approved POS correction to Professional Billing for a linked replacement.","Correct. Send the coding determination and original ICN to professional Billing. Confirm payer acceptance, then verify the new adjudication."],
+      ["Route the denied professional line to Patient Billing and attach the payer determination.","The remit assigned no patient share. Resolve the verified setting error and follow liability policy first."]
     ], correct:1, goal:"Replace the incorrect professional line without creating a duplicate.",
     note:"Per Lakeshore Benefit Plan EOB in Provider Exchange, dated July 1 (remit date), claim P-218 (payer ICN FIC-P18) was denied on June 30 due to a mismatch in the submitted setting.\n\nChecked the submitted professional claim line and the June 3 encounter record. POS 11 was billed; Coding confirmed POS 22 for the on-campus outpatient setting. Checked Provider Exchange for the replacement instructions.\n\nResolution planned: Route the approved POS correction to professional Billing for a replacement linked to FIC-P18. No replacement has been transmitted in this exercise. TAT: Not provided. Professional AR will check payer acceptance on July 9, escalate if absent, and protect the July 19 receipt deadline."
   },
@@ -732,9 +838,9 @@ const deck = {
     ],
     prompt:"Which action advances this claim?",
     answers:[
-      ["Change the institutional bill to inpatient to fit the payer display.","The signed order and submitted claim support outpatient observation. Do not change a supported classification to fit the payer’s error."],
-      ["Repeat the same reprocessing request and wait past July 12.","The prior review closed unchanged. Waiting could lose the formal appeal right."],
-      ["Submit the supported facility appeal using the designated queue before the deadline.","Correct. Include the order, matching approval, institutional claim, remit and prior review result. Confirm receipt and claim association, then follow the determination."]
+      ["Send a replacement institutional claim with inpatient bill type based on the payer’s record.","The signed order and submitted claim support outpatient observation. Do not change a supported classification to fit the payer’s error."],
+      ["Reopen informal review with the order and treat its receipt as the formal appeal deadline marker.","The prior review closed unchanged. Waiting could lose the formal appeal right."],
+      ["File the supported facility appeal in the designated queue before the receipt deadline.","Correct. Include the order, matching approval, institutional claim, remit and prior review result. Confirm receipt and claim association, then follow the determination."]
     ], correct:2, goal:"Obtain review of the facility denial and preserve the formal appeal deadline.",
     note:"07/07 · H-407/FIC-H47, 06/04–05, $2,860 open. Signed observation order, outpatient bill and FIC-A47 match. Payer matched inpatient; RP-F47 closed unchanged. Facility appeals owner to submit formal appeal with matched claim, order, approval, remit and prior response by 07/08 target. Confirm indexed receipt that day; escalate before 07/12 5 p.m. payer local. Review revised decision and posting."
   },
@@ -759,8 +865,8 @@ const deck = {
     },hint:"Start with the payer determination, then document research, the completed resolution and the TAT/follow-up. This is a portal-only case.",success:"EOB and denial → checked → completed resolution → TAT and follow-up. Add a call paragraph after the research only if a payer call actually occurred."
   },
   exit: [
-    {id:"exit-p",tone:"phys",label:"Physician · intake problem",prompt:"The clearinghouse batch says accepted, but the payer’s acknowledgment rejects the rendering provider ID on the professional claim. No accepted claim version exists. The approved enrollment record gives the correct identifier. What do you do?",answers:["File a medical necessity appeal.","Route the verified correction to Professional Billing, then confirm payer-level acceptance before filing expires.","Resend the same claim unchanged because the batch was accepted."],correct:1,why:"The matched payer acknowledgment shows a rejection before adjudication. Correct through the authorized team; capture payer acceptance and a dated follow-up."},
-    {id:"exit-h",tone:"hosp",label:"Hospital · payment posting problem",prompt:"The matched remittance advice and deposit trace show the hospital’s expected facility payment in full. There is no corresponding payment in the account’s transaction history. What do you do?",answers:["Request a facility pricing appeal.","Transfer the balance to the patient while researching.","Send remit and trace to Payment Posting for reconciliation; verify posting before closing."],correct:2,why:"This is a posting gap with verified funds, not a payment variance at the payer. Assign Posting, set a checkpoint, and confirm the payment posts to the account."}
+    {id:"exit-p",tone:"phys",label:"Physician · intake problem",prompt:"The clearinghouse batch says accepted, but the payer’s acknowledgment rejects the rendering provider ID on the professional claim. No accepted claim version exists. The approved enrollment record gives the correct identifier. What do you do?",answers:["Dispute the payer edit by submitting the enrollment record through the appeal queue.","Route the correction to Professional Billing and verify payer acceptance.","Ask the clearinghouse to retransmit the accepted batch with the original provider identifier."],correct:1,why:"The matched payer acknowledgment shows a rejection before adjudication. Correct through the authorized team; capture payer acceptance and a dated follow-up."},
+    {id:"exit-h",tone:"hosp",label:"Hospital · payment posting problem",prompt:"The matched remittance advice and deposit trace show the hospital’s expected facility payment in full. There is no corresponding payment in the account’s transaction history. What do you do?",answers:["Request payer reprocessing to recover the open balance using the remit and facility rate.","Move the open balance to patient billing after confirming the deposit and payer paid status.","Send the remit and trace to Posting, then verify the account was updated."],correct:2,why:"This is a posting gap with verified funds, not a payment variance at the payer. Assign Posting, set a checkpoint, and confirm the payment posts to the account."}
   ]
 };
 
@@ -840,10 +946,26 @@ function update(){
   id("save-status").textContent=storage?"Progress saves on this browser":"Storage unavailable · progress is kept in this tab";
   for(const s of sections){
     const keys=(nav[s.id]?.dataset.keys||"").split(" ").filter(Boolean);
-    const finished=keys.length&&keys.every(k=>state.done[k]||capstonePassed(k)||(k==="final-assessment"&&assessmentPassed()));
+    const finished=(s.id==="final-assessment"?assessmentPassed():s.id==="handoff"?!!state.completion:sectionStudyComplete(s.id))&&
+      keys.every(k=>state.done[k]||capstonePassed(k)||(k==="final-assessment"&&assessmentPassed()));
     if (nav[s.id]) nav[s.id].querySelector(".nav-status").textContent=finished?"✓":"";
   }
   updateCompletion(complete,total,casesPassed);
+  const all=Object.keys(reviewBySection);
+  id("section-progress").textContent=all.filter(section=>sectionStudyComplete(section)&&sectionPracticeComplete(section)).length+
+    " / "+all.length+" Sections Complete";
+  if(current){
+    const parts=reviewBySection[current.split("/")[0]];
+    const progress=id("part-progress");
+    progress.hidden=!parts;
+    if(parts)progress.textContent=parts.filter(part=>openedParts[part]).length+" / "+parts.length+" Parts Opened";
+  }
+  if(assessment.locked){
+    for(const s of sections)nav[s.id].hidden=s.id!=="final-assessment"&&!(s.id==="handoff"&&state.completion);
+    for(const heading of id("nav").querySelectorAll(".nav-group"))heading.hidden=true;
+    id("course-brand").href="#final-assessment";
+  }
+  syncAssessmentIntro();
 }
 function save(){persistCourse();update();}
 function earned(k){
@@ -1135,8 +1257,16 @@ function finalCheck(){
       feedback(out,(correct?"Correct. ":"Try again. ")+g.why,correct?"success":"review");
       if(store){if(correct)earned(g.id);else save();}
     }
-    g.answers.forEach((a,i)=>{const b=button(a,"decision",()=>choose(i));b.setAttribute("aria-pressed","false");buttons.push(b);choices.append(b);});
-    card.append(element("p",g.prompt),choices,out);host.append(lessonStep(g.label,card));
+    g.answers.forEach((answer,i)=>{
+      const choice=button(answer,"decision",()=>choose(i));
+      choice.dataset.option=String.fromCharCode(65+i);
+      choice.setAttribute("aria-pressed","false");
+      buttons.push(choice);choices.append(choice);
+    });
+    const badge=element("div",undefined,"decision-badge");
+    badge.append(icon(g.tone==="phys"?"phys":"hosp"),element("span",titleLabel(g.label)));
+    card.append(badge,element("p",g.prompt,"decision-scenario"),choices,out);
+    host.append(lessonStep(g.label,card));
     if(state.choices[g.id]!==undefined)choose(state.choices[g.id],false);
   }
 }
@@ -1177,13 +1307,13 @@ const remitSamples=[
    rows:[["99213","Office visit",1,220,160,130,60,30,"CO-45 · PR-3"],["93000","Electrocardiogram",1,200,140,140,60,0,"CO-45"]],
    codes:[["CO-45","Contractual reduction above the applicable fee arrangement: $120 total. Do not transfer this to the patient."],["PR-3","Copayment assigned on the office-visit line: $30. Verify liability and prior collections before billing."]],
    question:"The bank trace and posted payment confirm the $270 payment. What is the next step?",
-   options:["Bill the member $150 for every unpaid dollar.","Reconcile the $120 contractual adjustment and verify any remaining $30 copay before collection.","Appeal the $120 as an automatic underpayment."],correct:1,
+   options:["Bill $150 to the member because the paid amount was $150 below charges.","Reconcile the $120 adjustment and verify the $30 copay before billing.","Open a $120 payment dispute using the contractual adjustment as the variance."],correct:1,
    why:"$420 billed = $270 payer paid + $120 contractual adjustment + $30 PR in this example. Allowed is $300. A contractual adjustment is not a patient balance."},
   {id:"eob-h",tone:"hosp",lane:"Hospital · denied",plan:facilityAppeal.payer,provider:facilityAppeal.provider,claim:caseIdentity,member:facilityAppeal.member+" · "+facilityAppeal.memberId,dos:facilityAppeal.dos,received:facilityAppeal.received,remit:facilityAppeal.denial,payment:"No EFT for this claim",status:"Denied · no patient share",
    rows:[[facilityAppeal.revenue+" / "+facilityAppeal.service,"Outpatient observation",facilityAppeal.units,facilityAppeal.billed,0,facilityAppeal.paid,facilityAppeal.billed,facilityAppeal.patientShare,facilityAppeal.reason]],
    codes:[["CO-197","The payer reported missing authorization for its matched record. This code reports a reason, not proof that approval was never obtained."],["Remark / notice","The payer notice says the claim was matched to an inpatient record. Check the actual outpatient order and approval before routing."]],
    question:"Which evidence best tests the reason before you move the balance?",
-   options:["The physician’s separate remittance only.","The patient’s current deductible only.","The facility claim and observation order, original approval, and the payer’s matched record."],correct:2,
+   options:["The physician claim, its place of service and the separate professional remittance.","The eligibility response, benefit limitations and the member’s current deductible.","The facility bill, observation order, original approval and payer match."],correct:2,
    why:"The institutional record and approval match outpatient observation. Compare the payer’s inpatient match and prior response. There is $0 patient responsibility on this remit."}
 ];
 function paperTable(headers,rows){
@@ -1240,6 +1370,7 @@ function remittanceStudio(){
         postingCheck.classList.toggle("focus-zone",i===3);
         stepButtons.forEach((other,j)=>other.setAttribute("aria-pressed",String(i===j)));
         feedback(coach,hint);
+        if(current?.startsWith("eob/"))markPart("eob/remit-"+which+"-"+i);
       });b.append(element("span",String(i+1),"remit-step-number"),element("span",titleLabel(label)));b.setAttribute("aria-pressed","false");toolbar.append(b);return b;
     });
     const response=status(),choices=element("div",undefined,"decision-options"), answerButtons=[];
@@ -1333,7 +1464,7 @@ function appealCaseStudy(){
 }
 function appealStudio(){
   const host=id("game-appeal"), data=state.appeal??={docs:[]};
-  const choices=field("Payer destination",[["appeals",facilityAppeal.route+" · formal provider appeal"],["general","General Correspondence"],["replacement","Electronic Replacement Claim"]],data.route);
+  const choices=field("Payer destination",[["appeals",facilityAppeal.route],["general","General Correspondence"],["replacement","Electronic Replacement Claim"]],data.route);
   const deadline=field("Latest acceptable receipt in this case",[["due",caseDeadline],["turnaround",day(14)+" after informal review"],["first",day(-10)+" (remit date)"]],data.deadline);
   const prompts=["Issue · what decision and claim are you disputing?","Evidence · what proves the payer matched the wrong setting?","Request · what result are you asking the payer to issue?"];
   const drafts=prompts.map((prompt,i)=>field(prompt,null,data["draft"+i]));
@@ -1473,8 +1604,8 @@ function noteStudio(){
     evidence.append(element("p",notationOpening(c)),element("p","Checked "+c.checked));
     if(c.call)evidence.append(element("p",notationCall(c)));
     evidence.append(marks([["Completed action",c.action],["Actual status",c.pending],["Documented TAT",c.tat],["Next owner / checkpoint",c.next+" · "+day(c.follow)]]));
-    const action=field("What action was completed?",[["done",c.action],["paid","Closed the account as paid."],["none","No action was taken."]],details.action);
-    const statusField=field("What status belongs in the note?",[["pending",c.pending],["resolved","Final determination and payment confirmed."]],details.status);
+    const action=field("What action was completed?",[["done",c.action],["paid","Reconciled the posted payment and closed the account."],["none","Verified the determination and left the action in draft."]],details.action);
+    const statusField=field("What status belongs in the note?",[["pending",c.pending],["resolved","Revised determination issued and payment posting verified."]],details.status);
     const reference=field(c.call?"Enter the Call Ref #":"Enter the portal, chat or appeal reference",null,details.reference);reference.input.rows=1;
     const tat=field("Which TAT is supported by the source?",[["business","10 business days from payer acceptance"],["unknown","TAT not provided or not confirmed"],["calendar","10 calendar days from today"]],details.tat);
     const next=field("Write the follow-up · owner, date and proof to verify",null,details.next);
@@ -1483,7 +1614,9 @@ function noteStudio(){
       const update=()=>{details[key]=f.input.value;out.hidden=true;result.replaceChildren();save();};
       f.input.addEventListener("input",update);f.input.addEventListener("change",update);
     }
-    panel.append(readingFold("Review The Verified Case Facts",evidence),action.box,statusField.box,reference.box,tat.box,next.box,controls(button("Generate and review the note","button primary",()=>{
+    const facts=readingFold("Review The Verified Case Facts",evidence);
+    facts.addEventListener("toggle",()=>{if(facts.open&&current?.startsWith("notation/"))markPart("notation/case-facts");});
+    panel.append(facts,action.box,statusField.box,reference.box,tat.box,next.box,controls(button("Generate and review the note","button primary",()=>{
       result.replaceChildren();
       if(action.input.value!=="done"||statusField.input.value!=="pending"){
         feedback(out,"Separate the action that already happened from the claim outcome. The source does not support a paid or closed status.","review");return;
@@ -1688,11 +1821,11 @@ function capstoneCases(){
       required:["claim","remit","balance","contract","history"],
       questions:[
         ["priority","Which account should you work first?",[[p.claim,p.claim],[ "P-903","P-903"]],p.claim,"The smaller balance has a near, documented receipt deadline. The higher balance has a confirmed wait and no current blocker."],
-        ["cause","What best explains the verified payment difference?",[["posting","The bank payment was not posted."],["oldrate","The payer used the superseded rate schedule."],["pr","The copay must be moved to insurance."]],"oldrate","The executed Version B applies on DOS. The portal shows Version A, while the ERA and EFT agree with the posted payment."],
+        ["cause","What best explains the verified payment difference?",[["posting","The EFT deposit arrived, but the payment was not posted."],["oldrate","The payer used the superseded rate schedule."],["pr","The copay was applied incorrectly and should move to insurance."]],"oldrate","The executed Version B applies on DOS. The portal shows Version A, while the ERA and EFT agree with the posted payment."],
         ["amount","What is the supported payment variance?",null,String(pVariance),moneyLabel(pExpectedAllowed)+" expected allowed − "+moneyLabel(pShare)+" verified patient share = "+moneyLabel(pExpected)+" expected payer payment; less "+moneyLabel(pActual)+" actual = "+moneyLabel(pVariance)+". Reconcile the remaining "+moneyLabel(pAR-pVariance)+" separately."],
-        ["action","Which next action and route fit?",[["appeal","Appeal the entire "+moneyLabel(pAR)+" balance without a rate calculation."],["review","Route to Professional AR for Payment Reconsideration with the matched remit and amendment."],["rebill","Send an unchanged replacement claim."]],"review","This is a supported pricing issue. Use the documented reconsideration route; no claim data correction is established."],
-        ["status","Which action has already occurred?",[["paid","The payer approved the pricing review."],["sent","A reconsideration was sent and acknowledged."],["research","The matched claim, remit, posted payment and rates were reviewed; the review is still a draft."]],"research","A portal review and a draft are evidence of research, not evidence of a submitted reconsideration."],
-        ["next","Which checkpoint protects the claim?",[["wait","Wait until the routine queue review date of "+day(9)+"."],["check","Target submission and verify indexed receipt on "+p.check+"; escalate before "+p.due+" if missing."],["close","Close when the portal opens the review form."]],"check","Protect the receipt deadline. A receipt is a milestone; verify the later payer determination and posting separately."]
+        ["action","Which next action and route fit?",[["appeal","Send a formal appeal for the full "+moneyLabel(pAR)+" with the remittance and account balance."],["review","Route to Professional AR for Payment Reconsideration with pricing evidence."],["rebill","File a replacement claim using the same line data and the current fee schedule."]],"review","This is a supported pricing issue. Use the documented reconsideration route; no claim data correction is established."],
+        ["status","Which action has already occurred?",[["paid","The payer finished its pricing review and approved a revised payment."],["sent","A reconsideration was sent and the payer confirmed its receipt."],["research","The pricing evidence was reviewed and reconsideration was drafted."]],"research","A portal review and a draft are evidence of research, not evidence of a submitted reconsideration."],
+        ["next","Which checkpoint protects the claim?",[["wait","Use the routine queue date of "+day(9)+" to check for a determination and then submit if needed."],["check","Target submission and verify receipt on "+p.check+". Escalate before "+p.due+" if missing."],["close","Treat access to the review form as confirmation of receipt and set a payment check."]],"check","Protect the receipt deadline. A receipt is a milestone; verify the later payer determination and posting separately."]
       ],
       channel:"portal",channelWhy:"The portal provides the matched pricing version, review status and route. A call adds no needed evidence here.",
       rubric:["Name the payer, DOS, matched claim/ICN and remit or portal reference.","Explain the schedule mismatch and the "+moneyLabel(pVariance)+" variance separately from the "+moneyLabel(pAR)+" open insurance balance.","State that the reconsideration is planned and name the route and required evidence.","Name the owner, dated receipt checkpoint and what to verify; do not invent a turnaround."],
@@ -1724,11 +1857,11 @@ function capstoneCases(){
       required:["claim","balance","history"],
       questions:[
         ["priority","Which account should you work first?",[[ "H-919","H-919"],[h.claim,h.claim]],h.claim,"H-918 has an actionable contact checkpoint today and an unresolved blocker. H-919 is larger but within confirmed review time."],
-        ["cause","What is holding the facility claim?",[["auth","Missing admission authorization."],["employer","The carrier is awaiting the employer incident report for liability review."],["records","The provider’s encounter records have not been indexed."]],"employer","The verified adjuster confirmed the provider records are indexed. The employer report is the outstanding item."],
-        ["amount","What reimbursement conclusion is supported?",[["all","The full billed amount is the expected payment."],["zero","Expected allowed is confirmed as zero."],["unknown","Expected reimbursement is not established until liability and the pricing basis are verified."]],"unknown","Zero paid and open AR do not establish allowed or expected payment; liability has not been decided."],
-        ["action","Which next action and route fit?",[["transfer","Transfer the charges to the patient."],["liaison","Route the employer report request to the employer liaison and confirm indexing with the assigned adjuster."],["appeal","Send a formal denial appeal with the provider notes again."]],"liaison","Coordinate the outstanding employer document and verify the carrier’s receipt. There is no denial to appeal."],
-        ["status","What can you document as completed?",[["contact","Verified the blocker with the assigned adjuster and captured the reference; the employer report is not yet received."],["closed","Liability was accepted and the claim can close."],["uploaded","The employer report has been received and indexed."]],"contact","The call is completed. The report, liability determination and payment remain pending."],
-        ["next","When does the payer’s turnaround start?",[["today","Three calendar days from today."],["index","Three business days after indexed receipt. Check the liaison and adjuster on "+h.check+"."],["file","Three business days from original claim filing."]],"index","The clock begins with indexed receipt of the employer report, not the call or original claim. The dated follow-up verifies that trigger."]
+        ["cause","What is holding the facility claim?",[["auth","The carrier is awaiting proof of admission authorization from the facility."],["employer","The employer incident report is pending for liability review."],["records","The provider submitted its encounter records but indexing is still pending."]],"employer","The verified adjuster confirmed the provider records are indexed. The employer report is the outstanding item."],
+        ["amount","What reimbursement conclusion is supported?",[["all","Use the billed amount as expected payment while the carrier reviews liability."],["zero","Use $0 allowed because the carrier has issued neither a payment nor a remittance."],["unknown","Verify liability and the pricing basis before estimating reimbursement."]],"unknown","Zero paid and open AR do not establish allowed or expected payment; liability has not been decided."],
+        ["action","Which next action and route fit?",[["transfer","Route the balance to patient billing because carrier liability is pending."],["liaison","Ask the employer liaison for the report and confirm indexing with the adjuster."],["appeal","Send a formal appeal with the provider’s encounter records and the pending status."]],"liaison","Coordinate the outstanding employer document and verify the carrier’s receipt. There is no denial to appeal."],
+        ["status","What can you document as completed?",[["contact","Confirmed the missing report with the adjuster and logged the call reference."],["closed","Confirmed that liability was accepted and that the claim is ready for financial closure."],["uploaded","Confirmed that the employer report arrived and was indexed for liability review."]],"contact","The call is completed. The report, liability determination and payment remain pending."],
+        ["next","When does the payer’s turnaround start?",[["today","Three calendar days after the verified call. Check the carrier again on the due date."],["index","Three business days after indexing. Check with the liaison and adjuster on "+h.check+"."],["file","Three business days from claim filing. Use the carrier intake acknowledgment as the trigger."]],"index","The clock begins with indexed receipt of the employer report, not the call or original claim. The dated follow-up verifies that trigger."]
       ],
       channel:"contact",channelWhy:"Portal status alone does not identify the missing item. The verified adjuster contact confirms the blocker, owner and TAT.",
       rubric:["Identify the exact claim, carrier case and pending liability status without inventing an EOB.","Record the payer, phone, representative, blocker and Call Ref # from the adjuster call record.","Distinguish the call completed from the employer report still outstanding; assign the correct owner.","State the actual TAT trigger and dated receipt check; do not infer allowed, denial or patient liability."],
@@ -1876,8 +2009,8 @@ function runCapstone(g){
     });
     const readiness=element("p",capstonePassed(g.id)?"Suggested standard met for this case.":"Complete the objective checks and self-review to meet the suggested standard.","activity-count");
     result.append(readiness,controls(button("Save My Case Work","button secondary",()=>{
-      writeTextFile("Claim_Lab_Prep_"+g.claim+"_Work_Sample.txt",[
-        "CLAIM LAB PREP · FICTIONAL CASE WORK",g.lane+" · "+g.claim,"Training As Of: "+day(0),
+      writeTextFile("Insurance_Follow_Up_"+g.claim+"_Work_Sample.txt",[
+        "INSURANCE FOLLOW-UP AND DENIAL MANAGEMENT · FICTIONAL CASE WORK",g.lane+" · "+g.claim,"Training As Of: "+day(0),
         "Objective Checks: "+a.score+"/8 · Attempt "+work.attempts,
         "Self-Review: "+work.review.filter(Boolean).length+"/5 (Learner Reported)",
         "Suggested Standard: "+(capstonePassed(g.id)?"Met":"Not Yet Met"),
@@ -1916,72 +2049,72 @@ function runCapstone(g){
 const assessmentGroups = [
   {name:"AR Workflow And Prioritization", items:[
     ["queue","Which account should you work first today?",
-      ["A $12,000 claim is within its confirmed review period.","A $420 denial has a submission deadline tomorrow and the evidence is ready.","A $3,900 claim was accepted yesterday and has no request for records.","A $1,200 payment was reconciled yesterday and the balance is zero."],1,
+      ["A $12,000 claim has six days left in its verified review window.", "A $420 denial is due tomorrow and its evidence is ready.", "A $3,900 claim was accepted yesterday with no records requested.", "A $1,200 payment posted yesterday and the balance is zero."],1,
       "A near filing deadline and ready evidence make the denial actionable today, even when other claims have larger balances."],
     ["lifecycle","The payer’s acknowledgment shows an invalid member ID and rejects the transmission. No remittance exists. What should you do?",
-      ["Use the appeal route to dispute the member ID.","Request a revised remittance for the same version.","Wait for adjudication because the clearinghouse sent it.","Verify the member ID, route the intake correction and confirm payer acceptance."],3,
+      ["Send a reconsideration with proof of the correct member ID.", "Request a fresh status trace using the same submitted member ID.", "Wait for adjudication based on the clearinghouse acceptance.", "Correct the verified ID and confirm payer acceptance."],3,
       "The claim stopped at intake. Correct the verified edit through the appropriate owner and confirm the payer accepted the new transmission."],
     ["queue","The matched payer claim is pending within its verified review window. The payer confirmed no records are due. What should you do next?",
-      ["Set a dated status check with an owner and record what the payer confirmed.","Ask Billing to submit a replacement claim today.","Dispute the pending status through the formal appeals route.","Move the remaining balance to patient responsibility while the payer reviews."],0,
+      ["Record the pending status and assign a dated check.", "Ask Billing to replace the claim before the review period ends.", "Escalate the pending decision to the payer’s formal review team.", "Request a duplicate status inquiry from a second payer team."],0,
       "When the claim is still in its verified review window and no action is due, document the status and assign a dated follow-up."],
     ["money","A revised remittance says the payer issued additional payment. What evidence supports financial closure?",
-      ["A portal status of Paid with the new determination date.","A payer representative’s verbal confirmation that the payment was approved.","The revised remit, matched payment trace and posted payment agree, and any residual balance is explained.","The expected payment estimate matches the value in the prior appeal."],2,
+      ["The portal shows a paid status, determination date and revised total.", "The rep confirms an approved amount and provides a call reference.", "The remit, trace and posting match, with any residual explained.", "The appeal estimate matches the allowed amount on the revised remit."],2,
       "A favorable determination is only one part of closure. Match the payment and posting to the revised remit and account for any residual balance."]
   ]},
   {name:"Physician And Hospital Billing", items:[
     ["claim-samples","A professional claim was denied for the service setting. Which pair should you compare first?",
-      ["The facility type of bill and facility revenue line.","The professional place of service and the documented location of care.","The hospital statement period and EFT deposit date.","The clinician’s rendering NPI and the patient’s plan deductible."],1,
+      ["The facility type of bill and the hospital’s signed admission order.", "The professional place of service and documented care location.", "The claim’s procedure code and the payer’s coverage policy for it.", "The rendering provider’s NPI and the payer’s enrollment record."],1,
       "Use the professional place of service and encounter record to verify the reported location. The hospital bill has separate setting and service evidence."],
     ["hospital","You are tracing a charge for a hospital outpatient service. Which details identify the relevant institutional billing record?",
-      ["The rendering clinician and diagnosis pointer from the CMS-1500.","The place of service and modifiers on the physician’s professional claim.","The type of bill, statement period and relevant revenue line on the UB-04.","The patient statement date and the provider’s deposit amount."],2,
+      ["The rendering provider, diagnosis pointer and charge on the CMS-1500.", "The service code, place of service and modifier on the physician claim.", "The UB-04 type of bill, statement period and revenue line.", "The insurer’s payment trace, deposit date and total payment amount."],2,
       "An institutional bill uses the type of bill, statement period and revenue lines. The professional claim is a separate record."],
     ["physician","The submitted professional line shows three units. The encounter supports two, and Coding approves the correction. What is the next step?",
-      ["Route to Professional Billing for a correction under payer instructions and confirm acceptance of the linked version.","Ask the payer to reprocess the three-unit line without changing the claim.","Ask Hospital Billing to correct the revenue code for the service.","Appeal using the encounter note as proof that the original three units were correct."],0,
+      ["Send the approved correction to Professional Billing and track acceptance.", "Send the encounter record to payer review and ask to reprice three units.", "Ask Hospital Billing to correct the revenue line using the encounter record.", "Ask the payer to adjust the units from the record without a claim correction."],0,
       "The provider verified a submitted data error. Route the correction to the owner and follow the payer’s instructions for the claim version."],
     ["lifecycle","A hospital visit generated a professional claim and a facility claim. The physician remit shows payment. What can you conclude about the hospital claim?",
-      ["It was accepted because the physician’s claim was paid.","It can be closed if the service date matches the physician remit.","Its remaining balance can be billed to the patient.","Its status still needs verification using the facility claim’s own identifiers and evidence."],3,
+      ["The facility claim reached intake because the related professional claim was paid.", "The hospital can close its claim if the service dates agree across both records.", "The professional copay is the patient share for both claims from the encounter.", "The facility claim needs its own status verification."],3,
       "One encounter can produce separate claim records. A paid professional remit does not establish the facility claim’s status."]
   ]},
   {name:"Payer Research And Denial Resolution", items:[
     ["causes","A payer search says “No claim on file,” but the billing system says “Sent.” What should you verify before retransmitting?",
-      ["The patient balance and last statement date.","The total charge and the most recent deposit amount.","The payer, identifiers and version on the transmission and corresponding payer acknowledgment.","The appeal deadline on an unrelated remit for the same member."],2,
+      ["The member’s current eligibility, plan type and primary payer listing.", "The payment trace, deposit date and amount for the most recent remittance.", "The sent payer, claim identifiers, version and matched acknowledgment.", "The provider’s account history and prior payer correspondence for this member."],2,
       "Match the records to the same claim version and payer. A transmission entry alone does not prove payer acceptance."],
     ["guide","A plan shows active coverage on the service date. What else should you verify when investigating why a specific service was denied?",
-      ["The service-specific benefit, network and limits, plus any relevant coordination of benefits or authorization requirements.","The coverage shown today and the last premium payment only.","The total deductible for all services and the provider’s billed charge only.","The member ID and whether a patient statement already went out."],0,
+      ["The service benefit, network, limits and applicable payer order or approval.", "The plan’s current eligibility, product name and effective date for today’s lookup.", "The annual deductible and out-of-pocket totals for the member across all services.", "The patient’s claim history, remaining balance and date of the most recent statement."],0,
       "Active eligibility is only one part of the investigation. Verify the rules that apply to the specific service and coverage on that date."],
     ["hospital","The facility bill and signed order both show outpatient care, and the approval matches the service. The payer’s denial references an inpatient approval requirement. What is the best next step?",
-      ["Change the bill to inpatient to match the payer’s message.","Request a new approval before confirming how the payer matched the existing one.","Route the balance to the patient because an authorization denial posted.","Use the payer’s supported review route to challenge the setting mismatch with the bill, order and approval."],3,
+      ["Route the bill to Facility Billing for an inpatient replacement based on the denial.", "Request retroactive inpatient approval using the payer’s denial as proof of the setting.", "Send the balance to patient billing after confirming the outpatient approval number.", "Dispute the payer’s setting match using the bill, order and approval."],3,
       "The available evidence supports the submitted setting. Use it to challenge the payer’s determination through the appropriate review route."],
     ["cap-hospital","A facility claim is past its follow-up checkpoint. The portal still says pending and shows no reason. Which research action will best identify the blocker?",
-      ["Refresh eligibility to see whether the member is active now.","Contact the verified payer representative or assigned adjuster and ask what is outstanding and what starts the review clock.","Resend all hospital records through the portal without checking what is missing.","Set another generic follow-up without checking why the prior one is overdue."],1,
+      ["Ask the plan’s eligibility team to confirm active coverage and network status on the service date.", "Ask the assigned payer contact what is pending and when review begins.", "Resend the provider’s records and use the new upload receipt as the review start date.", "Set the next follow-up from the portal’s last status date using a standard turnaround."],1,
       "When the portal does not answer the question and follow-up is due, contact the verified payer or adjuster and document the blocker and next checkpoint."]
   ]},
   {name:"EOBs And Payment Reconciliation", items:[
     ["eob","You open a payer remittance. What should you verify before interpreting its amounts and adjustment codes?",
-      ["The current patient statement date and total account balance.","The payer, claim control number, service date and relevant line match the account you are working.","The bank deposit and the expected rate are both higher than the account balance.","The appeal upload is linked to any claim for the same member."],1,
+      ["The statement date, account balance, patient share and last posting date.", "The payer, claim ID, service date and line match the account.", "The billed charge, expected rate, contract version and allowed amount.", "The appeal receipt, work item and prior review match the same member."],1,
       "Match the remittance to the correct claim and line before using it to explain payment, denial or patient responsibility."],
     ["eob","The remittance shows a payer payment and a contractual adjustment. The account still shows an open balance. What should you do before transferring it to the patient?",
-      ["Transfer the full open amount because a payment was already issued.","Bill the contractual adjustment and let the patient contact the payer.","Close the claim as settled based on the payment status alone.","Match the remit, payment trace and posting, then verify the actual patient share and explain the residual."],3,
+      ["Post the remaining account balance to the patient after confirming the payer issued payment.", "Use the remaining billed charge to estimate patient share and confirm it on the next statement.", "Post the remit amounts and close the account based on the payer’s paid status.", "Reconcile the remit, trace and posting, then verify patient share."],3,
       "An open account balance does not establish patient responsibility. Reconcile the records and verify the member’s actual share before moving the balance."],
     ["money","The verified allowed amount is $480 and validated patient share is $60. The payer paid $390. With no other applicable adjustments, what payer underpayment is supported?",
-      ["$30","$60","$90","$420"],0,
+      ["$30", "$60", "$90", "$420"],0,
       "Expected payer payment is $420 ($480 − $60). The difference between expected and actual payer payment is $30."],
     ["cap-physician","A claim has a verified $45 payer underpayment and a $70 open account balance. What amount should the payer pricing dispute identify?",
-      ["$25, the residual after subtracting the variance.","$70, because the payer dispute should match all open AR.","$45, with the remaining $25 reconciled separately.","$115, the sum of the variance and open balance."],2,
+      ["$25, the difference after removing the pricing variance.", "$70, the entire insurance balance on the account.", "$45, the supported pricing variance.", "$115, the sum of the variance and open insurance AR."],2,
       "Document the verified pricing variance in the dispute. Investigate the other account balance separately."]
   ]},
   {name:"Appeals, Documentation And Handoff", items:[
     ["appeal","A plan notice requires a formal appeal to be received by Friday at 5 p.m. payer local time. Informal review is still pending and no extension is documented. What protects the deadline?",
-      ["Submit a supported appeal through the designated route before the receipt cutoff and verify the receipt.","Wait for informal review to close and use that date to start the appeal clock.","Send a portal status message by Friday and treat the message timestamp as the appeal receipt.","Use the internal task creation date to show the appeal met the deadline."],0,
+      ["Use the formal appeal route and verify receipt before the cutoff.", "Wait for informal review to close, then count from the date it was decided.", "Send a portal status message and use its timestamp as proof of formal receipt.", "Create a task before the cutoff and use its timestamp when submitting later."],0,
       "Follow the stated appeal receipt rule. Do not treat informal review or an internal task as an extension or a formal appeal receipt."],
     ["appeal","The portal confirms receipt of your appeal packet and issues a tracking number. What belongs in your next note?",
-      ["Appeal approved and claim paid as of today.","Denial reversed, pending a deposit only.","Packet received with the tracking number and date. Assign a follow-up for indexing or determination.","Claim corrected and accepted for adjudication, with no follow-up needed."],2,
+      ["Appeal accepted for review and approved, with a check due on the next payment run.", "Denial reversed after review, with the existing balance pending posting confirmation.", "Packet received. Record its date and reference, then set a follow-up.", "Claim replacement accepted, with follow-up tied to the original claim filing date."],2,
       "A receipt documents delivery. Record what happened and set a checkpoint for the payer’s next verified event."],
     ["notation","Which sequence gives the next collector the clearest account history?",
-      ["Planned resolution, call details, then the billed amount and account age.","EOB source and determination, verified research, call details and reference if a call occurred, then completed action, TAT and dated follow-up.","Call reference, payer phone number, then a generic denial reason and an estimated payment date.","Follow-up date, appeal letter draft, then the patient balance."],1,
+      ["EOB and denial, proposed action, then payer contact and the original billed amount.", "EOB and denial, verified research, call details if applicable, then action, TAT and follow-up.", "Account and claim IDs, payer reference, planned appeal, then the estimated payment date and balance.", "Queue reason, working deadline, appeal narrative, then billing office contact and account history."],1,
       "Lead with the payer determination and its source, then support the conclusion with research and close with the action, turnaround and checkpoint."],
     ["notation","You verified the denial in the portal and drafted an appeal. You did not call or submit it, and no turnaround was provided. What is the correct close for the note?",
-      ["Appeal submitted via portal. Check payment in 30 business days.","Payer contacted. Await representative response before checking again.","Denial disputed and pending review. Use the draft date as proof of receipt.","Appeal drafted, submission pending. TAT unavailable. Document who will submit it and when to verify receipt."],3,
+      ["Record that the appeal was sent, then schedule a portal check after the standard review window.", "Record that the payer was contacted and set a follow-up based on the rep’s usual turnaround.", "Record that the appeal is under review and use the draft date to start the receipt timeline.", "Record the draft, submission owner and receipt checkpoint. TAT unavailable."],3,
       "Distinguish drafting from submission, leave out a call that did not occur, and name an owner and checkpoint without inventing a TAT."]
   ]}
 ];
@@ -1993,6 +2126,7 @@ const passMark = Math.ceil(assessmentItems.length * 0.8);
 const assessment = state.assessment ??= {answers:{},index:0,attempts:0,best:null,submitted:false};
 function assessmentPassed(){return assessment.best!==null&&assessment.best>=passMark;}
 function assessmentScore(score){return score+" / "+assessmentItems.length+" ("+Math.round(100*score/assessmentItems.length)+"%)";}
+let syncAssessmentIntro=()=>{};
 function runAssessment(){
   const host=id("final-assessment-activity");
   const total=assessmentItems.length;
@@ -2026,6 +2160,36 @@ function runAssessment(){
     notice.hidden=true;
     save();
     render(true);
+  }
+  function intro(){
+    const heading=element("h2","Before You Begin");
+    heading.tabIndex=-1;
+    const remaining=element("div",undefined,"assessment-prerequisites");
+    const begin=button("Begin Final Assessment","button primary",()=>{
+      if(begin.disabled||!state.learnerName)return;
+      assessment.locked=true;
+      assessment.answers={};
+      assessment.index=0;
+      assessment.submitted=false;
+      save();
+      show("final-assessment",0,false);
+      render(true);
+    });
+    syncAssessmentIntro=()=>{
+      const unfinished=Object.keys(reviewBySection).filter(section=>!sectionStudyComplete(section)||!sectionPracticeComplete(section));
+      begin.disabled=!!unfinished.length||!state.learnerName;
+      remaining.replaceChildren();
+      if(unfinished.length){
+        const first=unfinished[0];
+        remaining.append(element("p",unfinished.length+" section"+(unfinished.length===1?" still needs":"s still need")+
+          " your attention. Open every part and complete the required practice."),
+          link("Continue · "+id(first).dataset.nav,first,"assessment-lesson"));
+      }else remaining.append(element("p","All required lessons and activities are complete."));
+    };
+    syncAssessmentIntro();
+    content.append(heading,element("p","Once you begin, earlier course screens are locked. Keep My Notes handy to refer to what you wrote. You can move between questions and retry if needed."),
+      remaining,controls(begin));
+    return heading;
   }
   function question(){
     const index=assessment.index,item=assessmentItems[index];
@@ -2101,28 +2265,36 @@ function runAssessment(){
         const choice=assessment.answers[number++];
         const correct=choice===item.correct;
         if(correct)correctCount++;
+        if(!passed)continue;
         const review=element("li",undefined,correct?"is-correct":"is-incorrect");
         review.append(element("strong",item.prompt),element("p","Your answer: "+item.options[choice]),
           ...(correct?[]:[element("p","Correct answer: "+item.options[item.correct])]),
-          element("p",item.why),link("Revisit The Lesson",item.lesson,"assessment-lesson"));
+          element("p",item.why));
         list.append(review);
+      }
+      if(!passed){
+        reviews.append(element("p",group.name+" · "+correctCount+" / "+group.items.length,"assessment-category-result"));
+        continue;
       }
       const fold=readingFold(group.name+" · "+correctCount+" / "+group.items.length,list);
       fold.classList.remove("reading-fold");
       fold.classList.add("assessment-review-fold");
       reviews.append(fold);
     }
-    content.append(reviews,controls(button("Start A New Attempt","button secondary",()=>{
+    const action=passed?link("View Course Completion","handoff","button primary"):button("Start A New Attempt","button secondary",()=>{
       if(!assessment.submissions?.length)assessment.submissions=[{score,answers:{...assessment.answers}}];
       assessment.answers={};
       assessment.submitted=false;
       go(0);
-    }),link("View Course Completion","handoff","button primary")));
+    });
+    content.append(reviews,controls(action));
     return heading;
   }
   function render(focus=false){
     content.replaceChildren();
-    const target=assessment.submitted?results():question();
+    syncAssessmentIntro=()=>{};
+    const target=assessment.submitted&&(assessment.locked||state.completion)?results():assessment.locked?question():intro();
+    if(current?.startsWith("final-assessment/"))updateNotepad();
     if(focus)target.focus();
   }
   render();
@@ -2354,6 +2526,116 @@ function setupClaimViewer(){
   }
 }
 
+const openedParts=state.openedParts??={};
+function markPart(part){
+  if(!state.learnerName||openedParts[part])return;
+  openedParts[part]=true;
+  save();
+}
+function pageReviewParts(section,page,index){
+  const key=section.id+"/"+index;
+  const parts=[key];
+  const content=page.nodes.flatMap(node=>{
+    if(!page.step||page.step.parentElement!==node)return [node];
+    return [page.step];
+  });
+  const folds=content.flatMap(node=>[node,...node.querySelectorAll(".reading-fold")])
+    .filter(node=>node.classList.contains("reading-fold")&&!node.closest(".case-result")&&!node.closest("#game-notebuilder"));
+  folds.forEach((fold,i)=>{
+    const part=key+"/reading-"+i;
+    parts.push(part);
+    fold.addEventListener("toggle",()=>{if(fold.open&&current===key)markPart(part);});
+  });
+  const board=content.find(node=>node.classList.contains("walkthrough"));
+  if(board){
+    const part=key+"/teaching";
+    parts.push(part);
+    board.querySelector("audio")?.addEventListener("playing",()=>{if(current===key)markPart(part);});
+    const transcript=board.querySelector(".walkthrough-transcript");
+    transcript.addEventListener("toggle",()=>{if(transcript.open&&current===key)markPart(part);});
+  }
+  if(content.some(node=>node.id==="game-notebuilder"))parts.push("notation/case-facts");
+  if(content.some(node=>node.id==="game-eob")){
+    for(let sample=0;sample<remitSamples.length;sample++){
+      for(let step=0;step<4;step++)parts.push("eob/remit-"+sample+"-"+step);
+    }
+  }
+  return parts;
+}
+function sectionStudyComplete(section){
+  const parts=reviewBySection[section];
+  return !!parts?.length&&parts.every(part=>openedParts[part]);
+}
+function courseStudyComplete(){
+  return Object.keys(reviewBySection).every(sectionStudyComplete);
+}
+
+function setupNotepad(){
+  const trigger=id("notes-toggle"), panel=id("course-notepad"), editor=id("note-screen"), library=id("note-library");
+  function toggle(open){
+    panel.hidden=!open;
+    trigger.setAttribute("aria-expanded",String(open));
+    (open?editor:trigger).focus();
+  }
+  trigger.addEventListener("click",()=>toggle(panel.hidden));
+  id("notes-close").addEventListener("click",()=>toggle(false));
+  panel.addEventListener("keydown",event=>{
+    if(event.key==="Escape"){event.preventDefault();toggle(false);}
+  });
+  editor.addEventListener("input",()=>{
+    const screen=noteScreen();
+    if(!screen)return;
+    if(editor.value.trim())personalNotes[screen.key]={title:screen.title,text:editor.value};
+    else delete personalNotes[screen.key];
+    persistCourse();
+    refreshNoteLibrary();
+  });
+  library.addEventListener("change",showSavedNote);
+}
+const personalNotes=state.personalNotes??={};
+function noteScreen(){
+  if(!current)return null;
+  const [section,page]=current.split("/");
+  const unit=id(section);
+  if(section==="final-assessment"){
+    if(!assessment.locked)return {key:section+"/overview",title:"Assessment Overview"};
+    return assessment.submitted
+      ?{key:section+"/results",title:"Assessment Results"}
+      :{key:section+"/question-"+assessment.index,title:"Final Assessment · Question "+(assessment.index+1)};
+  }
+  const label=pagesBySection[section][page].label;
+  const title=unit.dataset.nav+(pagesBySection[section].length>1?" · "+label:"");
+  return {key:current,title:titleLabel(title)};
+}
+function showSavedNote(){
+  const note=personalNotes[id("note-library").value];
+  const output=id("note-reading");
+  output.textContent=note?.text||"";
+  output.hidden=!note;
+}
+function refreshNoteLibrary(){
+  const library=id("note-library"), previous=library.value;
+  const other=Object.entries(personalNotes).filter(([key])=>key!==noteScreen()?.key);
+  const placeholder=element("option",other.length?"Choose A Screen":"No Other Notes Yet");
+  placeholder.value="";
+  library.replaceChildren(placeholder);
+  for(const [key,note] of other){
+    const option=element("option",note.title);
+    option.value=key;
+    library.append(option);
+  }
+  library.value=other.some(([key])=>key===previous)?previous:"";
+  showSavedNote();
+}
+function updateNotepad(){
+  const screen=noteScreen();
+  if(!screen)return;
+  id("notes-toggle").hidden=!state.learnerName;
+  id("note-screen-label").textContent=screen.title;
+  id("note-screen").value=personalNotes[screen.key]?.text||"";
+  refreshNoteLibrary();
+}
+
 function learnerFirstName(){return state.learnerName?.split(" ")[0]||"";}
 function persistCourse(){
   if(storage)try{localStorage.setItem(KEY,JSON.stringify(state));}catch{storage=false;}
@@ -2363,7 +2645,9 @@ let sheetAttempted=false;
 let celebrating=false;
 function setupCompletion(){
   const form=id("learner-profile");
-  const input=id("learner-name");
+  const input=id("learner-name"), dialog=id("learner-dialog");
+  dialog.addEventListener("cancel",event=>{if(!state.learnerName)event.preventDefault();});
+  if(!state.learnerName)dialog.showModal();
   form.addEventListener("submit",event=>{
     event.preventDefault();
     const name=input.value.trim().replace(/\s+/g," ");
@@ -2373,12 +2657,13 @@ function setupCompletion(){
       return;
     }
     state.learnerName=name;
-    const next=requestedLesson||{section:"lifecycle",page:0};
+    dialog.close();
+    const next=requestedLesson||{section:"start",page:0};
     requestedLesson=null;
     persistCourse();
     const hash="#"+next.section+(next.page?"/"+(next.page+1):"");
-    if(window.location.hash===hash)show(next.section,next.page);
-    else window.location.hash=hash;
+    if(window.location.hash!==hash)window.location.hash=hash;
+    show(next.section,next.page);
   });
   id("retry-sheet").addEventListener("click",()=>{sheetAttempted=false;sendCompletion();});
   id("download-course-pdf").addEventListener("click",async()=>{
@@ -2395,16 +2680,14 @@ function setupCompletion(){
 }
 function updateCompletion(drills,total,cases){
   const first=learnerFirstName();
-  const complete=drills===total&&cases===capstoneIds.length&&assessmentPassed();
+  const complete=drills===total&&cases===capstoneIds.length&&assessmentPassed()&&courseStudyComplete();
   if(complete&&first&&!state.completion){
     state.completion={id:crypto.randomUUID(),name:state.learnerName,completedAt:new Date().toISOString(),
       score:assessment.best,attempts:assessment.attempts,drills,cases};
     persistCourse();
   }
-  id("learner-profile").hidden=!!first;
   id("learner-welcome").hidden=!first;
   id("learner-welcome").textContent=first?"Welcome, "+first+".":"";
-  id("welcome-hint").hidden=!!first;
   id("course-start-link").hidden=!first;
   id("assessment-personal").hidden=!first;
   id("assessment-personal").textContent=first?first+", use the evidence you practiced in both billing tracks.":"";
@@ -2570,8 +2853,8 @@ function pdfAnswers(section){
     for(const scenario of notationScenarios){
       const entry=state.structuredNote?.[scenario.id];if(!entry||!Object.keys(entry).length)continue;
       p(scenario.label,true);
-      response("Completed Action",({done:scenario.action,paid:"Closed as paid",none:"No action taken"})[entry.action]);
-      response("Claim Status",({pending:scenario.pending,resolved:"Final determination and payment confirmed"})[entry.status]);
+      response("Completed Action",({done:scenario.action,paid:"Reconciled the posted payment and closed the account",none:"Verified the determination and left the action in draft"})[entry.action]);
+      response("Claim Status",({pending:scenario.pending,resolved:"Revised determination issued and payment posting verified"})[entry.status]);
       response("Reference",entry.reference);
       response("TAT",({business:"10 business days from payer acceptance",unknown:"Not provided or confirmed",calendar:"10 calendar days from today"})[entry.tat]);
       response("Follow-Up",entry.next);
@@ -2629,11 +2912,18 @@ function pdfAnswers(section){
   return blocks;
 }
 function coursePDFChapters(){
-  return sections.filter(section=>section.id!=="handoff").map(section=>{
+  return sections.filter(section=>section.id!=="handoff"||notesFor(section.id).length).map(section=>{
     const blocks=[];
-    readablePDF(section,blocks);
-    return {title:section.dataset.nav,blocks:blocks.concat(pdfAnswers(section.id))};
+    if(section.id!=="handoff")readablePDF(section,blocks);
+    return {title:section.dataset.nav,blocks:blocks.concat(pdfAnswers(section.id),notesFor(section.id))};
   });
+  function notesFor(section){
+    const entries=Object.entries(personalNotes).filter(([key])=>key.startsWith(section+"/"));
+    if(!entries.length)return [];
+    return [{text:"My Notes",heading:true},...entries.flatMap(([,note])=>[
+      {text:note.title,heading:true},{text:note.text}
+    ])];
+  }
 }
 async function printableBoard(source){
   if(typeof Image==="undefined"||typeof XMLSerializer==="undefined")return null;
@@ -2694,7 +2984,7 @@ async function buildCoursePDF(){
     page=pdf.addPage([w,h]);y=h-61;
     page.drawRectangle({x:0,y:h-8,width:w,height:8,color:rgb(.10,.31,.34)});
     page.drawLine({start:{x:margin,y:37},end:{x:w-margin,y:37},thickness:.6,color:rgb(.8,.85,.87)});
-    page.drawText("CLAIM LAB PREP  /  FICTIONAL TRAINING RECORD",{x:margin,y:24,font:normal,size:8,color:muted});
+    page.drawText("INSURANCE FOLLOW-UP AND DENIAL MANAGEMENT  /  TRAINING RECORD",{x:margin,y:24,font:normal,size:8,color:muted});
     page.drawText(String(pdf.getPageCount()),{x:w-margin-15,y:24,font:bold,size:8,color:muted});
   }
   function wrap(text,font,size){
@@ -2722,14 +3012,14 @@ async function buildCoursePDF(){
     for(const row of rows){if(y<62)newPage();if(row)await line(row,margin,y,size,font,heading?accent:ink);y-=step;}
     y-=heading?7:5;
   }
-  pdf.setTitle("RCM Back End Lab Prep — Course And Answers");
+  pdf.setTitle("Insurance Follow-Up And Denial Management Fundamentals — Course And Answers");
   pdf.setSubject("Lessons, practice answers and final assessment");
   newPage();
-  await paragraph("RCM Back End Lab Prep",true,25);
+  await paragraph("Insurance Follow-Up And Denial Management Fundamentals",true,23);
   await paragraph("Course And Answer Portfolio",true,17);
   await paragraph(state.completion.name,true,16);
   await paragraph("Completed "+new Date(state.completion.completedAt).toLocaleDateString()+" · Final assessment "+assessmentScore(state.completion.score));
-  await paragraph("Includes reference material and the saved responses available in this browser. Optional work that was left blank is identified where applicable.");
+  await paragraph("Includes reference material, personal notes and the saved responses available in this browser. Optional work that was left blank is identified where applicable.");
   await paragraph("Contents",true,16);
   const cover=page,contentsY=y;
   const contents=[];
@@ -2757,7 +3047,7 @@ async function downloadCoursePDF(){
   const bytes=await buildCoursePDF();
   const url=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));
   const a=element("a");
-  a.href=url;a.download="Claim_Lab_Prep_"+learnerFirstName().replace(/[^\p{L}\p{N}]/gu,"")+".pdf";
+  a.href=url;a.download="Insurance_Follow_Up_Fundamentals_"+learnerFirstName().replace(/[^\p{L}\p{N}]/gu,"")+".pdf";
   document.body.append(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),60000);
 }
@@ -2779,7 +3069,6 @@ termRecall();
 crossword();
 flipCards();
 capstoneCases().forEach(runCapstone);
-runAssessment();
 const pauseWalkthroughs=setupWalkthroughs();
 setupClaimViewer();
 setupCompletion();
@@ -2789,16 +3078,32 @@ id("note-draft").addEventListener("input",e=>{state.note=e.target.value;save();}
 id("print-guide").addEventListener("click",()=>{document.body.classList.add("print-guide");window.print();});
 window.addEventListener("afterprint",()=>document.body.classList.remove("print-guide"));
 const keyMap={lifecycle:"timeline forms",queue:"queue",physician:"phys",hospital:"facility",causes:"causes",money:"money",eob:"eob-p eob-h",appeal:"appeal",notation:"note notebuilder","quick-check":"exit-p exit-h","cap-physician":"cap-phys","cap-hospital":"cap-hosp","final-assessment":"final-assessment"};
-let group;
+function sectionPracticeComplete(section){
+  const keys=(keyMap[section]||"").split(" ").filter(Boolean);
+  return keys.every(key=>state.done[key]||capstonePassed(key));
+}
+let group, groupNumber=-1;
 for(const section of sections){
   const list=id("nav");
-  if(group!==section.dataset.group){group=section.dataset.group;list.append(element("p",group,"nav-group"));}
+  if(group!==section.dataset.group){group=section.dataset.group;groupNumber++;list.append(element("p",group,"nav-group"));}
   const a=link("",section.id,"nav-item");a.dataset.keys=keyMap[section.id]||"";
-  a.append(icon(section.dataset.icon),element("span",section.dataset.nav),element("span","","nav-status"));
+  const tile=element("span",undefined,"nav-icon");
+  tile.dataset.palette=groupNumber;
+  tile.append(icon(section.dataset.icon));
+  a.append(tile,element("span",section.dataset.nav),element("span","","nav-status"));
   list.append(a);nav[section.id]=a;
 }
 const pagesBySection=Object.fromEntries(sections.map(section=>[section.id,sectionPages(section)]));
+const reviewBySection=Object.fromEntries(sections.filter(s=>s.id!=="final-assessment"&&s.id!=="handoff")
+  .map(s=>[s.id,pagesBySection[s.id].flatMap((page,index)=>pageReviewParts(s,page,index))]));
+setupNotepad();
+runAssessment();
 function show(sectionId,page=0,focus=true){
+  if(assessment.locked&&sectionId!=="final-assessment"&&!(sectionId==="handoff"&&state.completion)){
+    sectionId="final-assessment";
+    page=0;
+    if(window.location.hash!=="#final-assessment")window.history?.replaceState(null,"","#final-assessment");
+  }
   if(!state.learnerName&&sectionId!=="start"){requestedLesson={section:sectionId,page};sectionId="start";page=0;}
   if(!state.learnerName&&sectionId==="start")page=0;
   const index=sections.findIndex(s=>s.id===sectionId);
@@ -2809,6 +3114,14 @@ function show(sectionId,page=0,focus=true){
   const active=showLessonPage(pages,position);
   pauseWalkthroughs();
   current=sectionId+"/"+position;
+  if(state.learnerName&&reviewBySection[sectionId]){
+    openedParts[current]=true;
+    if(sectionId==="eob"&&active.nodes.some(node=>node.id==="game-eob")){
+      const selected=[...section.querySelectorAll(".remit-sample")].findIndex(tab=>tab.getAttribute("aria-pressed")==="true");
+      const step=[...section.querySelectorAll(".remit-step")].findIndex(tab=>tab.getAttribute("aria-pressed")==="true");
+      if(selected>=0&&step>=0)openedParts["eob/remit-"+selected+"-"+step]=true;
+    }
+  }
   for(const s of sections){
     s.hidden=s.id!==sectionId;
     if(s.hidden)nav[s.id].removeAttribute("aria-current");else nav[s.id].setAttribute("aria-current","page");
@@ -2828,15 +3141,25 @@ function show(sectionId,page=0,focus=true){
   const meter=id("lesson-position");
   meter.hidden=pages.length<2||!state.learnerName;
   meter.replaceChildren(element("span",titleLabel(active.label)),element("span",(position+1)+" / "+pages.length));
-  const pager=id("pager");pager.replaceChildren();pager.hidden=!state.learnerName;
-  if(position>0)pager.append(coursePageLink("← "+pages[position-1].label,sectionId,position-1,"button ghost"));
+  const pager=id("pager");pager.replaceChildren();pager.hidden=!state.learnerName||!!assessment.locked;
+  const pageNav=(direction,label,section,page)=>{
+    const forward=direction==="Next";
+    const a=coursePageLink("",section,page,"pager-link "+(forward?"pager-next":"pager-back"));
+    const arrow=element("span",forward?"→":"←","pager-arrow");
+    arrow.setAttribute("aria-hidden","true");
+    const copy=element("span",undefined,"pager-copy");
+    copy.append(element("small",direction),element("strong",label));
+    a.append(...(forward?[copy,arrow]:[arrow,copy]));
+    return a;
+  };
+  if(position>0)pager.append(pageNav("Previous",pages[position-1].label,sectionId,position-1));
   else if(index>0){
     const previous=sections[index-1];
-    pager.append(coursePageLink("← "+previous.dataset.nav,previous.id,pagesBySection[previous.id].length-1,"button ghost"));
+    pager.append(pageNav("Previous",previous.dataset.nav,previous.id,pagesBySection[previous.id].length-1));
   }
-  if(position+1<pages.length)pager.append(coursePageLink(pages[position+1].label+" →",sectionId,position+1,"button secondary"));
-  else if(index+1<sections.length)pager.append(coursePageLink(sections[index+1].dataset.nav+" →",sections[index+1].id,0,"button secondary"));
-  state.unit=sectionId;state.page=position;save();
+  if(position+1<pages.length)pager.append(pageNav("Next",pages[position+1].label,sectionId,position+1));
+  else if(index+1<sections.length)pager.append(pageNav("Next",sections[index+1].dataset.nav,sections[index+1].id,0));
+  state.unit=sectionId;state.page=position;save();updateNotepad();
   if(focus){
     window.scrollTo(0,0);
     const target=meter.hidden?section.querySelector("h1"):meter;
@@ -2848,6 +3171,11 @@ function show(sectionId,page=0,focus=true){
 window.addEventListener("hashchange",()=>{
   const next=courseRoute(window.location.hash.slice(1)||"start");
   if(next.section+"/"+next.page!==current)show(next.section,next.page);
+});
+window.addEventListener("storage",event=>{
+  if(event.key===KEY&&!assessment.locked&&event.newValue){
+    try{if(JSON.parse(event.newValue).assessment?.locked)window.location.reload();}catch{}
+  }
 });
 window.addEventListener("resize",()=>requestAnimationFrame(()=>redraw.forEach(draw=>draw())));
 const start=window.location.hash?courseRoute(window.location.hash.slice(1)):{section:state.unit,page:state.page??0};
