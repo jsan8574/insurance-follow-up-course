@@ -723,8 +723,8 @@ main{padding-bottom:75px}
 </div>
 </section>
 <section id="final-assessment" class="unit" data-nav="Final Assessment" data-icon="flag" data-group="Practice And Assessment">
-<div class="lesson-head"><div class="eyebrow">Final Assessment · Physician And Hospital Billing</div><h1>Apply What You Learned</h1><p>Choose one answer per question. You can move between questions and change your answers until you submit. Once you begin, earlier lessons close. You can refer to your saved notes throughout the assessment.</p></div>
-<p id="assessment-personal" class="callout orange-emphasis" hidden></p><div id="final-assessment-activity"></div>
+<div class="lesson-head"><div class="eyebrow">Physician And Hospital Billing</div><h1>Final Assessment</h1></div>
+<div id="final-assessment-activity"></div>
 </section>
 <section id="handoff" class="unit" data-nav="Course Completion And PDF" data-icon="flag" data-group="Practice And Assessment">
 <div class="lesson-head"><h1 id="completion-heading">Course Completion</h1></div>
@@ -745,7 +745,6 @@ main{padding-bottom:75px}
 <form id="learner-profile" class="learner-profile">
 <label for="learner-name">Your Name</label>
 <div class="actions"><input id="learner-name" type="text" autofocus maxlength="80" autocomplete="name" required><button type="submit" class="button primary">Start The Course</button></div>
-<p id="welcome-hint" class="fine">Your name personalizes the course and identifies your completion record for your facilitator.</p>
 <div id="learner-profile-status" role="status" hidden></div>
 </form>
 </dialog>
@@ -753,7 +752,7 @@ main{padding-bottom:75px}
 <aside id="course-notepad" class="course-notepad" aria-labelledby="notepad-title" hidden>
 <div class="notepad-head"><h2 id="notepad-title">My Notes</h2><button type="button" id="notes-close" class="notes-close" aria-label="Close Notes">×</button></div>
 <div class="notepad-body">
-<p class="fine">Write down the evidence, decision or rule you want to remember. Your notes stay available during the assessment and go into your PDF.</p>
+<p class="fine">Capture evidence, decisions or rules for the assessment.</p>
 <label for="note-screen" id="note-screen-label">This Screen</label>
 <textarea id="note-screen" rows="5" maxlength="5000" placeholder="What would you want to remember from this screen?"></textarea>
 <label for="note-library">Saved Notes</label><select id="note-library"></select>
@@ -2187,7 +2186,7 @@ function runAssessment(){
       }else remaining.append(element("p","All required lessons and activities are complete."));
     };
     syncAssessmentIntro();
-    content.append(heading,element("p","Once you begin, earlier course screens are locked. Keep My Notes handy to refer to what you wrote. You can move between questions and retry if needed."),
+    content.append(heading,element("p","Starting locks earlier lessons. My Notes stays available."),
       remaining,controls(begin));
     return heading;
   }
@@ -2689,8 +2688,6 @@ function updateCompletion(drills,total,cases){
   id("learner-welcome").hidden=!first;
   id("learner-welcome").textContent=first?"Welcome, "+first+".":"";
   id("course-start-link").hidden=!first;
-  id("assessment-personal").hidden=!first;
-  id("assessment-personal").textContent=first?first+", use the evidence you practiced in both billing tracks.":"";
   const record=state.completion;
   id("completion-shortcut").hidden=!record;
   id("completion-pending").hidden=!!record;
