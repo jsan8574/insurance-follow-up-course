@@ -393,19 +393,19 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 .side summary{padding:9px 10px;border-radius:9px;background:#ffffff0b;border:1px solid #ffffff20;color:#f3fbff}
 .nav-group{font-size:.65rem;color:#a9c9d8;margin:17px 7px 7px;letter-spacing:.09em}
 .side .nav-item{
-  display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:41px;
+  display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:41px;
   margin:3px 0;padding:5px 7px;border:1px solid transparent;border-radius:9px;color:#e4eff7;line-height:1.22
 }
 .side .nav-item:hover{background:#ffffff0e;border-color:#ffffff24;color:#fff}
 .side .nav-item[aria-current]{background:linear-gradient(115deg,#dff8f0,#e8f7fc);border-color:#8edac6;color:#113c42;box-shadow:0 6px 16px #0b222a5c}
-.nav-icon{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;border:1px solid #ffffff24;background:#62e7d428;color:#9df3e1}
-.nav-icon .icon{width:16px;height:16px}
-.nav-icon[data-palette="1"]{background:#6ba7fb30;color:#c1dcff}
-.nav-icon[data-palette="2"]{background:#ae9ffa30;color:#e1d5ff}
-.nav-icon[data-palette="3"]{background:#58d9ae27;color:#a1f0cf}
-.nav-icon[data-palette="4"]{background:#ffc47625;color:#ffe0ae}
-.nav-icon[data-palette="5"]{background:#f99c8629;color:#ffc4b6}
-.side .nav-item[aria-current] .nav-icon{background:#c2ebe0;border-color:#9acdc0;color:#0d6157}
+.nav-icon{display:grid;place-items:center;--icon-light:#9debd9;--icon-dark:#14665b}
+.side .nav-icon .icon{width:17px;height:17px;color:var(--icon-light)}
+.nav-icon[data-palette="1"]{--icon-light:#a8ceff;--icon-dark:#285a94}
+.nav-icon[data-palette="2"]{--icon-light:#d6c7ff;--icon-dark:#624690}
+.nav-icon[data-palette="3"]{--icon-light:#8debc4;--icon-dark:#16634f}
+.nav-icon[data-palette="4"]{--icon-light:#ffda9c;--icon-dark:#7a4d15}
+.nav-icon[data-palette="5"]{--icon-light:#ffc0aa;--icon-dark:#8d452e}
+.side .nav-item[aria-current] .nav-icon .icon{color:var(--icon-dark)}
 .nav-status{color:#9df3cf}
 .side .nav-item[aria-current] .nav-status{color:#136d58}
 .section-progress{margin:13px 8px 2px;font-size:.74rem;font-weight:750;color:#d2e9f3}
@@ -439,11 +439,15 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 .learner-dialog .learner-profile .actions{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
 .learner-dialog .learner-profile input{min-width:0;width:100%;background:#fff;color:#143747}
 .learner-dialog #learner-profile-status{color:#804322}
-.notepad-dock{position:fixed;right:clamp(12px,3vw,32px);bottom:clamp(12px,3vw,28px);z-index:8;display:grid;justify-items:end;gap:8px;max-width:calc(100vw - 24px)}
+.notepad-dock{position:fixed;right:var(--notes-right,clamp(12px,3vw,32px));bottom:var(--notes-bottom,clamp(12px,3vw,28px));z-index:8;display:grid;justify-items:end;gap:8px;max-width:calc(100vw - 24px)}
 .notes-toggle{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;min-height:43px;border:1px solid #7bd3bb;border-radius:24px;color:#fff;background:linear-gradient(120deg,#123a52,#175951);box-shadow:0 6px 24px #183b5266;font-size:.86rem;font-weight:750}
 .notes-toggle .icon{width:18px;height:18px;color:#a9efda}
 .course-notepad{width:min(365px,calc(100vw - 28px));max-height:min(580px,calc(100dvh - 85px));overflow:auto;background:#fcfeff;border:1px solid #a5c5ce;border-radius:15px;box-shadow:0 12px 44px #183b5259}
-.notepad-head{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;color:#fff;background:linear-gradient(110deg,#16334b,#1a5a55)}
+.notepad-head{display:flex;align-items:center;gap:9px;padding:11px 14px;color:#fff;background:linear-gradient(110deg,#16334b,#1a5a55);cursor:grab;touch-action:none;user-select:none}
+.notepad-head.is-dragging,.notepad-head.is-dragging .notes-grip{cursor:grabbing}
+.notes-grip{display:grid;place-items:center;flex:none;width:26px;height:30px;padding:0;border:0;background:none;color:#b4e7dc;cursor:grab}
+.notes-grip svg{width:16px;height:18px;fill:currentColor}
+.notepad-head .notes-close{margin-left:auto;flex:none;cursor:pointer}
 .notepad-head h2{font-size:1rem;margin:0;color:inherit}
 .notes-close{background:#ffffff15;border:1px solid #ffffff3d;color:#fff;border-radius:50%;width:30px;height:30px;font-size:1.18rem}
 .notepad-body{padding:12px 14px 15px}
@@ -748,9 +752,9 @@ main{padding-bottom:75px}
 <div id="learner-profile-status" role="status" hidden></div>
 </form>
 </dialog>
-<div class="notepad-dock">
+<div id="notepad-dock" class="notepad-dock">
 <aside id="course-notepad" class="course-notepad" aria-labelledby="notepad-title" hidden>
-<div class="notepad-head"><h2 id="notepad-title">My Notes</h2><button type="button" id="notes-close" class="notes-close" aria-label="Close Notes">×</button></div>
+<div id="notepad-head" class="notepad-head"><button type="button" id="notes-grip" class="notes-grip" aria-label="Move Notes With Arrow Keys" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight Home" title="Drag to move"><svg viewBox="0 0 16 18" aria-hidden="true"><circle cx="5" cy="4" r="1.5"/><circle cx="11" cy="4" r="1.5"/><circle cx="5" cy="9" r="1.5"/><circle cx="11" cy="9" r="1.5"/><circle cx="5" cy="14" r="1.5"/><circle cx="11" cy="14" r="1.5"/></svg></button><h2 id="notepad-title">My Notes</h2><button type="button" id="notes-close" class="notes-close" aria-label="Close Notes">×</button></div>
 <div class="notepad-body">
 <p class="fine">Capture evidence, decisions or rules for the assessment.</p>
 <label for="note-screen" id="note-screen-label">This Screen</label>
@@ -2590,6 +2594,55 @@ function setupNotepad(){
     refreshNoteLibrary();
   });
   library.addEventListener("change",showSavedNote);
+  makeNotepadMovable();
+}
+
+function makeNotepadMovable(){
+  const dock=id("notepad-dock"), header=id("notepad-head"), grip=id("notes-grip");
+  let position, drag;
+  function offsets(){
+    const rect=dock.getBoundingClientRect();
+    return {right:window.innerWidth-rect.right,bottom:window.innerHeight-rect.bottom};
+  }
+  function place(right,bottom){
+    const {width,height}=dock.getBoundingClientRect(), edge=8;
+    const fit=(value,space)=>Math.max(edge,Math.min(value,space-edge));
+    position={right:fit(right,window.innerWidth-width),bottom:fit(bottom,window.innerHeight-height)};
+    dock.style.setProperty("--notes-right",position.right+"px");
+    dock.style.setProperty("--notes-bottom",position.bottom+"px");
+  }
+  header.addEventListener("pointerdown",event=>{
+    if(event.button!==0||drag||event.target.closest("#notes-close"))return;
+    drag={...offsets(),id:event.pointerId,x:event.clientX,y:event.clientY};
+    header.setPointerCapture(event.pointerId);
+    header.classList.add("is-dragging");
+  });
+  header.addEventListener("pointermove",event=>{
+    if(drag?.id!==event.pointerId)return;
+    place(drag.right+drag.x-event.clientX,drag.bottom+drag.y-event.clientY);
+  });
+  header.addEventListener("lostpointercapture",()=>{
+    drag=null;
+    header.classList.remove("is-dragging");
+  });
+  grip.addEventListener("keydown",event=>{
+    const shifts={ArrowLeft:[24,0],ArrowRight:[-24,0],ArrowUp:[0,24],ArrowDown:[0,-24]};
+    if(event.key==="Home"){
+      event.preventDefault();
+      position=null;
+      dock.style.removeProperty("--notes-right");
+      dock.style.removeProperty("--notes-bottom");
+      return;
+    }
+    const shift=shifts[event.key];
+    if(!shift)return;
+    event.preventDefault();
+    const {right,bottom}=offsets();
+    place(right+shift[0],bottom+shift[1]);
+  });
+  function fitOnScreen(){if(position)place(position.right,position.bottom);}
+  window.addEventListener("resize",fitOnScreen);
+  if(typeof ResizeObserver!=="undefined")new ResizeObserver(fitOnScreen).observe(dock);
 }
 const personalNotes=state.personalNotes??={};
 function noteScreen(){
