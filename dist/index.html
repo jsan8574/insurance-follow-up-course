@@ -557,6 +557,9 @@ main:has(.unit:not([hidden])>.practice-hero) .lesson-position{border-color:#417d
 .completion-metrics dd{margin:4px 0 0;color:#164553;font-size:clamp(1.06rem,2.2vw,1.42rem);font-weight:780}
 .completion-metrics #completion-readiness{color:#1b6657}
 .readiness-detail{color:#39586a;font-size:.88rem;margin-bottom:12px}
+
+.walkthrough-required{flex:1 0 100%;margin:0;color:#496275;font-size:.76rem;font-weight:680}
+.walkthrough-required.is-complete{color:#176453}
 </style></head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1079,7 +1082,7 @@ function update(){
     const parts=reviewBySection[current.split("/")[0]];
     const progress=id("part-progress");
     progress.hidden=!parts;
-    if(parts)progress.textContent=parts.filter(part=>openedParts[part]).length+" / "+parts.length+" Parts Opened";
+    if(parts)progress.textContent=parts.filter(partComplete).length+" / "+parts.length+" Parts Opened";
   }
   if(assessment.locked){
     for(const s of sections)nav[s.id].hidden=s.id!=="final-assessment"&&!(s.id==="handoff"&&state.completion);
@@ -2286,12 +2289,15 @@ function runAssessment(){
     const heading=element("h2","Before You Begin");
     heading.tabIndex=-1;
     const remaining=element("div",undefined,"assessment-prerequisites");
-    const begin=button("Begin Final Assessment","button primary",()=>{
+    const begin=button(assessment.resumeAfterBoards?"Resume Final Assessment":"Begin Final Assessment","button primary",()=>{
       if(begin.disabled||!state.learnerName)return;
       assessment.locked=true;
-      assessment.answers={};
-      assessment.index=0;
-      assessment.submitted=false;
+      if(!assessment.resumeAfterBoards){
+        assessment.answers={};
+        assessment.index=0;
+        assessment.submitted=false;
+      }
+      delete assessment.resumeAfterBoards;
       save();
       show("final-assessment",0,false);
       render(true);
@@ -2303,7 +2309,7 @@ function runAssessment(){
       if(unfinished.length){
         const first=unfinished[0];
         remaining.append(element("p",unfinished.length+" section"+(unfinished.length===1?" still needs":"s still need")+
-          " your attention. Open every part and complete the required practice."),
+          " your attention. Finish the narrated boards, open every reading part, and complete the required practice."),
           link("Continue · "+id(first).dataset.nav,first,"assessment-lesson"));
       }else remaining.append(element("p","All required lessons and activities are complete."));
     };
@@ -2650,6 +2656,22 @@ function setupClaimViewer(){
 }
 
 const openedParts=state.openedParts??={};
+const playbackParts=[];
+function partComplete(part){
+  if(openedParts[part])return true;
+  // Keep the section record for learners who finished before playback was required.
+  return !!(state.completion&&part.endsWith("/teaching-playback")&&openedParts[part.replace(/-playback$/,"")]);
+}
+function finishedPlayback(audio){
+  if(!Number.isFinite(audio.duration)||audio.duration<=0||!audio.played?.length)return false;
+  const tolerance=.25;
+  let end=0;
+  for(let i=0;i<audio.played.length;i++){
+    if(audio.played.start(i)>end+tolerance)return false;
+    end=Math.max(end,audio.played.end(i));
+  }
+  return end>=audio.duration-tolerance;
+}
 function markPart(part){
   if(!state.learnerName||openedParts[part])return;
   openedParts[part]=true;
@@ -2670,12 +2692,25 @@ function pageReviewParts(section,page,index){
     fold.addEventListener("toggle",()=>{if(fold.open&&current===key)markPart(part);});
   });
   const board=content.find(node=>node.classList.contains("walkthrough"));
-  if(board){
-    const part=key+"/teaching";
+  const audio=board?.querySelector("audio");
+  if(audio){
+    const part=key+"/teaching-playback";
     parts.push(part);
-    board.querySelector("audio")?.addEventListener("playing",()=>{if(current===key)markPart(part);});
-    const transcript=board.querySelector(".walkthrough-transcript");
-    transcript.addEventListener("toggle",()=>{if(transcript.open&&current===key)markPart(part);});
+    playbackParts.push(part);
+    const progress=element("p",undefined,"walkthrough-required");
+    progress.setAttribute("role","status");
+    const showStatus=(message="Finish Playback To Complete This Part")=>{
+      const complete=partComplete(part);
+      progress.textContent=complete?"Playback Complete":message;
+      progress.classList.toggle("is-complete",complete);
+    };
+    showStatus();
+    board.querySelector(".walkthrough-player").append(progress);
+    audio.addEventListener("ended",()=>{
+      if(finishedPlayback(audio))markPart(part);
+      showStatus("Play the skipped sections and finish the board.");
+    });
+    audio.addEventListener("error",()=>showStatus("Playback unavailable. Reload and try again."));
   }
   if(content.some(node=>node.id==="game-notebuilder"))parts.push("notation/case-facts");
   if(content.some(node=>node.id==="game-eob")){
@@ -2687,7 +2722,7 @@ function pageReviewParts(section,page,index){
 }
 function sectionStudyComplete(section){
   const parts=reviewBySection[section];
-  return !!parts?.length&&parts.every(part=>openedParts[part]);
+  return !!parts?.length&&parts.every(partComplete);
 }
 function courseStudyComplete(){
   return Object.keys(reviewBySection).every(sectionStudyComplete);
@@ -3368,6 +3403,10 @@ const pagesBySection=Object.fromEntries(sections.map(section=>[section.id,sectio
 const reviewBySection=Object.fromEntries(sections.filter(s=>s.id!=="final-assessment"&&s.id!=="handoff")
   .map(s=>[s.id,pagesBySection[s.id].flatMap((page,index)=>pageReviewParts(s,page,index))]));
 setupNotepad();
+if(assessment.locked&&!state.completion&&!playbackParts.every(partComplete)){
+  assessment.locked=false;
+  assessment.resumeAfterBoards=true;
+}
 runAssessment();
 const compactMap=window.matchMedia("(max-width: 820px)");
 const mapToggle=id("course-map-toggle"), mapPanel=id("course-map-panel");
