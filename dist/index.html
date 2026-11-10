@@ -362,11 +362,25 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 @media print{.lesson-position,.claim-viewer{display:none!important}}
 
 .recall-source{font-size:.8rem;color:#476b7e;margin-left:4px}
-.course-record{border-top:1px solid #c8dbe5;margin-top:14px;padding-top:12px}
-.course-record label{display:block;font-weight:750}
-.course-record .actions{margin-top:6px}
-.course-record input{width:min(100%,170px);padding:7px 9px;border:1px solid #abc2d3;border-radius:7px}
-.course-record .fine{margin:6px 0}
+
+.learner-profile{padding:12px 14px;margin:0 0 12px;background:#f4fafb;border:1px solid #cbdfe9;border-radius:10px;color:#1d3c52}
+.learner-profile label{font-weight:760}.learner-profile .actions{margin-top:6px}
+.learner-profile input{width:min(100%,290px);border:1px solid #9ab7ca;border-radius:7px;padding:8px 10px;background:#fff;color:#18394d}
+.orange-emphasis{border-left:4px solid #d87832;background:#fff3e8;color:#633317}
+#completion-shortcut{color:#ffcf9f;font-weight:750}
+.completion-card{position:relative;overflow:hidden;border-top:4px solid #e1833e;background:linear-gradient(130deg,#fff9f0,#f1faf8)}
+.completion-score{display:inline-block;margin:0;padding:5px 10px;background:#ffe6cf;border-radius:8px;color:#71350f;font-size:1.12rem;font-weight:790}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;top:-15px;left:var(--x);width:7px;height:13px;border-radius:2px;background:var(--color,#df8748);opacity:0}
+.confetti i:nth-child(1){--x:8%;--delay:.04s}.confetti i:nth-child(2){--x:20%;--delay:.21s;--color:#258d79}
+.confetti i:nth-child(3){--x:33%;--delay:.09s}.confetti i:nth-child(4){--x:45%;--delay:.3s;--color:#6b9fc8}
+.confetti i:nth-child(5){--x:61%;--delay:.1s;--color:#258d79}.confetti i:nth-child(6){--x:73%;--delay:.19s}
+.confetti i:nth-child(7){--x:84%;--delay:.29s;--color:#6b9fc8}.confetti i:nth-child(8){--x:93%;--delay:.15s}
+.is-celebrating .confetti i{animation:course-confetti 1.65s var(--delay) ease-in forwards}
+@keyframes course-confetti{12%{opacity:.95}90%{opacity:.85}100%{transform:translate(15px,265px) rotate(310deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.is-celebrating .confetti i{animation:none}}
+
+.denial-compare tbody th{min-width:120px;color:#69381e;background:#fff3e8;text-align:left}.denial-compare tbody td{min-width:200px;vertical-align:top}.learner-profile .fine{color:#3d5b6b}
 </style></head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -384,7 +398,7 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M4 4h6a2 2 0 1 1 4 0h6v6a2 2 0 1 0 0 4v6h-6a2 2 0 1 0-4 0H4v-6a2 2 0 1 1 0-4z"/></symbol>
 </svg>
 <a class="skip" href="#content">Skip To Activity</a>
-<header class="top"><a href="#start" class="brand"><svg aria-hidden="true"><use href="#i-route"/></svg><span>Claim Lab Prep<small>Revenue Cycle Lab</small></span></a><div class="top-progress"><span id="progress-text">0 / 14 Drills Complete</span><progress id="progress" value="0" max="14" aria-label="Course Drills Complete"></progress><small id="capstone-progress">0 / 2 Independent Cases Met</small></div></header>
+<header class="top"><a href="#start" class="brand"><svg aria-hidden="true"><use href="#i-route"/></svg><span>Claim Lab Prep<small>Revenue Cycle Lab</small></span></a><div class="top-progress"><span id="progress-text">0 / 14 Drills Complete</span><progress id="progress" value="0" max="14" aria-label="Course Drills Complete"></progress><a id="completion-shortcut" href="#handoff" hidden>Course Complete</a><small id="capstone-progress">0 / 2 Independent Cases Met</small></div></header>
 <div class="app">
 <aside class="side"><details id="nav-details" open><summary>Course Map</summary><nav id="nav" aria-label="Course Sections"></nav></details><p id="save-status" class="save-status"></p></aside>
 <main id="content" tabindex="-1">
@@ -393,7 +407,13 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <noscript><p class="callout">Enable JavaScript to play the activities. The desk guide remains readable below.</p></noscript>
 <section id="start" class="unit" data-nav="Mission Briefing" data-icon="flag" data-group="Start">
 <div class="hero">
-<div class="hero-copy"><div class="eyebrow">Interactive Simulator Preparation</div><h1>Work The Claim.<br><em>Know The Next Move.</em></h1><p>Two billing tracks. Fourteen guided drills, two independent account cases, and a final assessment. Learn each concept from a worked example, then practice the decisions you’ll make in Insurance Follow-up and Denial Management.</p><a class="button primary" href="#lifecycle">Start The First Drill <span aria-hidden="true">→</span></a><div class="hero-meta"><span>About 110–140 Minutes</span><span>Fictional Cases Only</span></div></div>
+<div class="hero-copy"><div class="eyebrow">Interactive Simulator Preparation</div><h1>Work The Claim.<br><em>Know The Next Move.</em></h1><p>Two billing tracks. Fourteen guided drills, two independent account cases, and a final assessment. Learn each concept from a worked example, then practice the decisions you’ll make in Insurance Follow-up and Denial Management.</p><p id="learner-welcome" hidden></p><a id="course-start-link" class="button primary" href="#lifecycle" hidden>Start The First Drill <span aria-hidden="true">→</span></a><form id="learner-profile" class="learner-profile">
+<label for="learner-name">Your Name</label>
+<div class="actions"><input id="learner-name" type="text" maxlength="80" autocomplete="name" required><button type="submit" class="button primary">Start The Course</button></div>
+<p id="welcome-hint" class="fine">Your name personalizes this course and identifies your completion and score for your facilitator.</p>
+<div id="learner-profile-status" role="status" hidden></div>
+</form><div class="hero-meta"><span>About 110–140 Minutes</span><span>Fictional Cases Only</span></div></div>
+
 <div class="hero-art" aria-hidden="true">
 <svg viewBox="0 0 375 270">
 <defs><linearGradient id="art-bg" x2="1" y2="1"><stop stop-color="#163653"/><stop offset="1" stop-color="#164b4b"/></lineargradient></defs>
@@ -483,6 +503,19 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 <article class="practice-prelude" data-prepares="game-causes" aria-labelledby="learn-causes"><div class="prelude-heading"><svg class="icon" aria-hidden="true"><use href="#i-match"/></svg><div><div class="eyebrow">Learn First</div><h2 id="learn-causes">The Reason Tells You What To Test</h2></div></div><div class="prelude-concept"><span class="prelude-label">The Concept</span><p>A payer message is a clue. The root cause is what the matched claim, source records and payer evidence prove. If they disagree, record what is still unknown before choosing an action.</p></div><details class="reading-fold"><summary>Worked Example</summary><div class="prelude-example"><ol><li><strong>Reported Reason</strong><span>“No claim on file.” The provider’s billing screen says it was sent.</span></li><li><strong>Proof To Seek</strong><span>Match the transmission and payer acknowledgment to the same claim version. If the payer rejected it, correct the intake edit; if it was accepted, trace it with the payer.</span></li></ol></div></details><p class="prelude-try"><strong>Now Try It:</strong> Match each symptom to the evidence that would confirm or rule out its cause.</p></article>
 <div id="game-causes" class="game"></div>
 <div class="briefing"><div><strong>Reported Reason</strong><span>What the payer said.</span></div><div><strong>Verified Cause</strong><span>What the matched records show.</span></div><div><strong>Resolution</strong><span>Who can fix it, by when, and with what proof.</span></div></div>
+<template data-lesson-page="Denial Types By Billing Track"></template>
+<div class="card denial-compare">
+<h2>Denial Types By Billing Track</h2>
+<p class="callout orange-emphasis"><strong>Start With The Payer’s Reason.</strong> Compare it with the submitted claim and supporting evidence before choosing a correction, review, appeal, or follow-up. An intake rejection and an underpayment need different workflows.</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">Denial Type</th><th scope="col">Physician Claim · CMS-1500</th><th scope="col">Facility Claim · UB-04</th></tr></thead><tbody>
+<tr><th scope="row">Claim Data Or Coding</th><td>Compare the disputed service line with the encounter. Check place of service, rendering provider, modifier, units and diagnosis linkage. Route a verified correction through the appropriate owner.</td><td>Compare the billed statement period, type of bill and affected revenue line with the order and facility records. Correct only fields the evidence supports.</td></tr>
+<tr><th scope="row">Authorization</th><td>Match approval to the billed procedure, provider, dates and units. Confirm what the payer matched before deciding whether the line needs correction or review.</td><td>Match the approval and signed order to the stay or service, dates and billed setting. Use the appeal path when the evidence supports the bill and the payer matched the wrong setting.</td></tr>
+<tr><th scope="row">Medical Necessity Or Records</th><td>Compare the denied procedure with the applicable policy and the dated clinician note or report.</td><td>Compare the denied service or level of care with the applicable policy, signed order and relevant facility records. Check exactly what records the payer requested.</td></tr>
+<tr><th scope="row">Eligibility Or Payer Order</th><td>Verify coverage and payer order on the service date. Match the member, professional claim and any prior payer determination.</td><td>Verify coverage over the billed service period and check whether a coverage change affects the stay or particular dates. Match prior payer evidence to the facility bill.</td></tr>
+<tr><th scope="row">Duplicate</th><td>Compare the original and later claim numbers, dates, rendering provider, procedure and modifier. Verify the earlier outcome before retransmitting.</td><td>Compare the account, billed dates, type of bill and original claim reference. Check whether a replacement, interim or overlapping bill was matched.</td></tr>
+<tr><th scope="row">Timely Filing</th><td>Find the payer receipt or acceptance for the exact professional claim version. Confirm which filing or replacement deadline applies.</td><td>Match payer receipt to the institutional bill and covered statement period. Confirm the applicable trigger and deadline for the version being reviewed.</td></tr>
+</tbody></table></div>
+</div>
 </section>
 <section id="eob" class="unit" data-nav="Read An EOB / Remittance" data-icon="receipt" data-group="Resolution Drills">
 <div class="lesson-head"><div class="eyebrow">Document Studio · Two Samples</div><h1>Read The Remit Before Moving The Balance</h1><p>Trace each line from charge to adjustment, payer payment and patient share. Compare the remit with the claim and posting before deciding what to do.</p></div>
@@ -607,17 +640,25 @@ main{background:radial-gradient(ellipse at 98% 0%,#edf7f4 0%,transparent 43%)}
 </section>
 <section id="final-assessment" class="unit" data-nav="Final Assessment" data-icon="flag" data-group="Lab Readiness">
 <div class="lesson-head"><div class="eyebrow">Final Assessment · Physician And Hospital Billing</div><h1>Apply What You Learned</h1><p>Choose one answer per question. You can move between questions and change your answers until you submit. Your results will show what to revisit, and you can try again.</p></div>
-<div id="final-assessment-activity"></div>
+<p id="assessment-personal" class="callout orange-emphasis" hidden></p><div id="final-assessment-activity"></div>
 </section>
-<section id="handoff" class="unit" data-nav="Readiness Record And Lab Handoff" data-icon="flag" data-group="Lab Readiness">
-<div class="lesson-head"><div class="eyebrow">Lab Handoff</div><h1>Review Your Readiness</h1><p>Use this as a self-check before the simulator. A facilitator can review your original case work separately.</p></div>
-<div class="card readiness"><div class="eyebrow">Readiness Record</div><h2 id="ready-heading">Your Practice Progress</h2><p id="ready-message" role="status"></p><ul id="readiness-case-results" class="readiness-case-results"></ul><div class="actions"><button id="save-record" type="button" class="button secondary">Save Practice Record</button><a class="button primary" href="https://rcmbackendlab.revexpertone.com/" target="_blank" rel="noopener noreferrer">Open The Lab ↗</a></div><p class="fine">Suggested readiness: finish the 14 core drills. For each independent case, meet at least 7 of 8 objective checks, including the six critical checks, and complete the five-item self-review. Pass the final assessment with at least 16 of 20 correct (80%). The practice record reports scores and completion without your written notes. Use Save My Case Work inside each case if a facilitator requests the note and rationale.</p>
-<form id="course-record" class="course-record"><label for="learner-code">Learner Code</label><div class="actions"><input id="learner-code" type="text" maxlength="24" autocomplete="off" placeholder="L-1234" required><button type="submit" class="button secondary">Download Record CSV</button></div><p class="fine">Send this score and progress record to your facilitator for the course tracker.</p><p id="record-status" class="feedback" role="status" hidden></p></form></div>
+<section id="handoff" class="unit" data-nav="Course Completion And PDF" data-icon="flag" data-group="Lab Readiness">
+<div class="lesson-head"><h1 id="completion-heading">Course Completion</h1></div>
+<div class="card" id="completion-pending"><p id="completion-progress"></p><a class="button secondary" href="#final-assessment">Open Final Assessment</a></div>
+<div class="card completion-card" id="completion-card" hidden>
+<div class="confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<p id="completion-score" class="completion-score"></p><p>Your course PDF includes the lessons, reference forms, and your saved practice and assessment answers.</p>
+<div class="actions"><button id="download-course-pdf" type="button" class="button primary">Download Course PDF</button><a class="button secondary" href="https://rcmbackendlab.revexpertone.com/" target="_blank" rel="noopener noreferrer">Open The Lab ↗</a></div>
+<p id="pdf-status" role="status" hidden></p><p id="completion-sync" role="status" hidden></p><button id="retry-sheet" type="button" class="button secondary" hidden>Retry Google Sheets Save</button>
+</div>
 </section>
 <nav class="pager" id="pager" aria-label="Previous Or Next Section"></nav>
 <footer>Claim Lab Prep · Independent practice module · Fictional claims</footer>
 </main></div>
-<script>const deck = {
+<script>const pdfLibrarySource="pdf-lib-0f9a5cad0794.js";
+const completionEndpoint="";
+const courseOrigin="https://rcm-back-end-lab-prep.jsan8574.chatgpt.site";
+const deck = {
   timeline: {
     title: "Connect the claim lifecycle",
     order: ["verify","build","submit","accept","decide","post","follow"],
@@ -802,16 +843,16 @@ function update(){
     const finished=keys.length&&keys.every(k=>state.done[k]||capstonePassed(k)||(k==="final-assessment"&&assessmentPassed()));
     if (nav[s.id]) nav[s.id].querySelector(".nav-status").textContent=finished?"✓":"";
   }
-  const ready=complete===total&&casesPassed===capstoneIds.length&&assessmentPassed();
-  id("ready-heading").textContent=ready?"Suggested Readiness Standard Met":"Your Practice Progress";
-  id("ready-message").textContent=ready?"You completed the core drills, met both independent case standards and passed the final assessment. Bring the desk guide and your own notes to the Lab.":complete+" of "+total+" core drills complete. "+casesPassed+" of 2 independent cases meet the suggested standard.";
-  const scores=id("readiness-case-results");scores.replaceChildren(...[...capstoneReport(),assessmentReport()].map(line=>element("li",line)));
+  updateCompletion(complete,total,casesPassed);
 }
-function save(){
-  if(storage)try{localStorage.setItem(KEY,JSON.stringify(state));}catch{storage=false;}
-  update();
+function save(){persistCourse();update();}
+function earned(k){
+  const value=k==="timeline"?state.sequence:state.pairs[k]||state.orders[k];
+  const checked=state.checkedAnswers??={};
+  if(value)checked[k]=Array.isArray(value)?[...value]:{...value};
+  if(k==="money")for(const g of deck.money)checked[g.id]={...state.calculations[g.id]};
+  state.done[k]=true;save();
 }
-function earned(k){state.done[k]=true;save();}
 function feedback(host,text,style="neutral"){
   host.className="feedback "+style;
   host.textContent=text;
@@ -1385,6 +1426,7 @@ function notationParts(c,followUp){
     "Resolution: "+c.action+" "+c.pending+" TAT: "+c.tat+" Follow-up: "+followUp
   ].filter(Boolean);
 }
+let notationScenarios=[];
 function noteStudio(){
   const host=id("game-notebuilder"), note=state.structuredNote??={};
   host.replaceChildren();
@@ -1419,6 +1461,7 @@ function noteStudio(){
   });
   const example=id("note-format-example");
   example.replaceChildren(...notationParts(cases[0],cases[0].next+" will check on "+day(cases[0].follow)+": "+cases[0].followProof).map(p=>element("p",p)));
+  notationScenarios=cases;
   const select=field("Select a completed-action scenario",cases.map(c=>[c.id,c.label]),note.case);
   const panel=element("div");
   const render=()=>{
@@ -1453,6 +1496,8 @@ function noteStudio(){
       }
       const output=element("label","Editable practice note","studio-field"), noteText=element("textarea");
       noteText.rows=10;noteText.value=notationParts(c,next.input.value.trim()).join("\n\n");
+      details.generated=noteText.value;
+      noteText.addEventListener("input",()=>{details.generated=noteText.value;save();});
       output.append(noteText);result.append(output);
       const selfCheck=element("p","Before posting, check the EOB date type and denial date, what you verified, call details if applicable, the action you actually completed, and the TAT and dated follow-up.","fine");
       result.append(selfCheck);
@@ -1699,13 +1744,6 @@ function capstonePassed(key){
   return !!(record?.assessment && record.assessment.score>=7 &&
     criticalCaseChecks.every(k=>record.assessment.correct[k]) &&
     record.review?.length===5 && record.review.every(Boolean));
-}
-function capstoneReport(){
-  return capstoneIds.map((key,i)=>{
-    const entry=state.capstones?.[key];
-    return (i===0?"Physician":"Hospital")+" Independent Case · "+
-      (entry?.assessment?entry.assessment.score+"/8 objective checks; "+(entry.review||[]).filter(Boolean).length+"/5 self-review items; "+(capstonePassed(key)?"Suggested Standard Met":"Review Still Needed"):"Not Submitted");
-  });
 }
 function caseDocument(doc,lane){
   const paper=element("article",undefined,"case-document "+lane);
@@ -1955,10 +1993,6 @@ const passMark = Math.ceil(assessmentItems.length * 0.8);
 const assessment = state.assessment ??= {answers:{},index:0,attempts:0,best:null,submitted:false};
 function assessmentPassed(){return assessment.best!==null&&assessment.best>=passMark;}
 function assessmentScore(score){return score+" / "+assessmentItems.length+" ("+Math.round(100*score/assessmentItems.length)+"%)";}
-function assessmentReport(){
-  return assessment.best===null?"Final Assessment: Not Submitted":
-    "Final Assessment: "+(assessmentPassed()?"Passed":"Needs Review")+" · Best "+assessmentScore(assessment.best)+" · Attempts: "+assessment.attempts;
-}
 function runAssessment(){
   const host=id("final-assessment-activity");
   const total=assessmentItems.length;
@@ -1988,6 +2022,7 @@ function runAssessment(){
     assessment.best=Math.max(assessment.best??0,score);
     assessment.submitted=true;
     assessment.attempts++;
+    (assessment.submissions??=[]).push({score,answers:{...assessment.answers}});
     notice.hidden=true;
     save();
     render(true);
@@ -2078,10 +2113,11 @@ function runAssessment(){
       reviews.append(fold);
     }
     content.append(reviews,controls(button("Start A New Attempt","button secondary",()=>{
+      if(!assessment.submissions?.length)assessment.submissions=[{score,answers:{...assessment.answers}}];
       assessment.answers={};
       assessment.submitted=false;
       go(0);
-    }),link("View Lab Readiness","handoff","button primary")));
+    }),link("View Course Completion","handoff","button primary")));
     return heading;
   }
   function render(focus=false){
@@ -2318,37 +2354,412 @@ function setupClaimViewer(){
   }
 }
 
-const recordColumns=[
-  "Record ID","Recorded At (UTC)","Learner Code","Core Drills Complete",
-  "Independent Cases Met","Best Final Score (Out Of 20)","Final Attempts","Final Assessment","Readiness"
-];
-
-function setupCourseRecord(){
-  const form=id("course-record");
-  const input=id("learner-code");
-  const notice=id("record-status");
-  input.value=state.learnerCode??"";
+function learnerFirstName(){return state.learnerName?.split(" ")[0]||"";}
+function persistCourse(){
+  if(storage)try{localStorage.setItem(KEY,JSON.stringify(state));}catch{storage=false;}
+}
+let requestedLesson=null;
+let sheetAttempted=false;
+let celebrating=false;
+function setupCompletion(){
+  const form=id("learner-profile");
+  const input=id("learner-name");
   form.addEventListener("submit",event=>{
     event.preventDefault();
-    const code=input.value.trim();
-    if(!/^[A-Za-z][A-Za-z0-9_-]{2,23}$/.test(code)){
-      feedback(notice,"Use your assigned code, starting with a letter, for example L-1234.","review");
+    const name=input.value.trim().replace(/\s+/g," ");
+    if(!/^[\p{L}][\p{L}\p{M} .’'\-]{0,79}$/u.test(name)){
+      feedback(id("learner-profile-status"),"Enter your name using letters, spaces, apostrophes or hyphens.","review");
       input.focus();
       return;
     }
-    if(state.learnerCode!==code||!state.courseRecordId)state.courseRecordId=crypto.randomUUID();
-    state.learnerCode=code;
-    const drills=Object.keys(milestones).filter(key=>state.done[key]).length;
-    const cases=capstoneIds.filter(capstonePassed).length;
-    const passed=assessmentPassed();
-    const ready=drills===Object.keys(milestones).length&&cases===capstoneIds.length&&passed;
-    const row=[state.courseRecordId,new Date().toISOString(),code,drills,cases,assessment.best??"",
-      assessment.attempts,assessment.best===null?"Not Submitted":passed?"Passed":"Needs Review",ready?"Met":"In Progress"];
-    const csv=[recordColumns,row].map(line=>line.join(",")).join("\r\n")+"\r\n";
-    writeTextFile("Claim_Lab_Prep_Record_"+code+".csv",csv,"text/csv");
-    save();
-    feedback(notice,"Record downloaded for your facilitator.","success");
+    state.learnerName=name;
+    const next=requestedLesson||{section:"lifecycle",page:0};
+    requestedLesson=null;
+    persistCourse();
+    const hash="#"+next.section+(next.page?"/"+(next.page+1):"");
+    if(window.location.hash===hash)show(next.section,next.page);
+    else window.location.hash=hash;
   });
+  id("retry-sheet").addEventListener("click",()=>{sheetAttempted=false;sendCompletion();});
+  id("download-course-pdf").addEventListener("click",async()=>{
+    if(!state.completion)return;
+    const download=id("download-course-pdf");
+    download.disabled=true;
+    feedback(id("pdf-status"),"Preparing your course PDF…");
+    try{
+      await downloadCoursePDF();
+      feedback(id("pdf-status"),"Your course PDF is ready.","success");
+    }catch{feedback(id("pdf-status"),"The PDF could not be prepared. Try again in this tab.","review");}
+    finally{download.disabled=false;}
+  });
+}
+function updateCompletion(drills,total,cases){
+  const first=learnerFirstName();
+  const complete=drills===total&&cases===capstoneIds.length&&assessmentPassed();
+  if(complete&&first&&!state.completion){
+    state.completion={id:crypto.randomUUID(),name:state.learnerName,completedAt:new Date().toISOString(),
+      score:assessment.best,attempts:assessment.attempts,drills,cases};
+    persistCourse();
+  }
+  id("learner-profile").hidden=!!first;
+  id("learner-welcome").hidden=!first;
+  id("learner-welcome").textContent=first?"Welcome, "+first+".":"";
+  id("welcome-hint").hidden=!!first;
+  id("course-start-link").hidden=!first;
+  id("assessment-personal").hidden=!first;
+  id("assessment-personal").textContent=first?first+", use the evidence you practiced in both billing tracks.":"";
+  const record=state.completion;
+  id("completion-shortcut").hidden=!record;
+  id("completion-pending").hidden=!!record;
+  id("completion-card").hidden=!record;
+  id("completion-heading").textContent=record?"Congratulations, "+learnerFirstName()+"!":"Course Completion";
+  id("completion-progress").textContent=drills+" of "+total+" drills and "+cases+" of 2 independent cases complete. Final assessment "+(assessmentPassed()?"passed.":"requires 16 out of 20 to pass.");
+  if(!record)return;
+  id("completion-score").textContent=assessmentScore(record.score)+" · Final Assessment";
+  if(current?.startsWith("handoff/")&&!celebrating){
+    celebrating=true;
+    id("completion-card").classList.add("is-celebrating");
+  }
+  if(record.savedAt)feedback(id("completion-sync"),"Completion and score saved to Google Sheets.","success");
+  else if(!completionEndpoint)feedback(id("completion-sync"),"Google Sheets saving is pending setup. Your PDF is available.");
+  else if(!sheetAttempted&&window.location.origin===courseOrigin)sendCompletion();
+}
+function sendCompletion(){
+  const record=state.completion;
+  if(!record||!completionEndpoint||record.savedAt||sheetAttempted||window.location.origin!==courseOrigin)return;
+  sheetAttempted=true;
+  const statusNode=id("completion-sync"), retry=id("retry-sheet");
+  retry.hidden=true;
+  feedback(statusNode,"Saving your completion and score…");
+  const nonce=crypto.randomUUID(), target="rcm-course-"+nonce;
+  const frame=element("iframe");
+  frame.name=target;
+  frame.hidden=true;
+  frame.title="Course Completion Submission";
+  const form=element("form");
+  form.method="post";form.action=completionEndpoint;form.target=target;form.hidden=true;
+  const input=element("input");
+  input.type="hidden";input.name="payload";input.value=JSON.stringify({...record,nonce});
+  form.append(input);document.body.append(frame,form);
+  let timer;
+  function finish(ok){
+    clearTimeout(timer);
+    window.removeEventListener("message",receive);
+    form.remove();frame.remove();
+    if(ok){
+      record.savedAt=new Date().toISOString();persistCourse();
+      feedback(statusNode,"Completion and score saved to Google Sheets.","success");
+    }else{
+      feedback(statusNode,"Google Sheets did not confirm the save. You can retry.","review");retry.hidden=false;
+    }
+  }
+  function receive(event){
+    const google=event.origin==="https://script.google.com"||
+      /^https:\/\/(?:[a-z0-9-]+-)?script\.googleusercontent\.com$/.test(event.origin);
+    if(google&&event.data?.type==="rcm-prep-completion"&&event.data.nonce===nonce)finish(event.data.ok===true);
+  }
+  window.addEventListener("message",receive);
+  timer=setTimeout(()=>finish(false),22000);
+  form.submit();
+}
+
+let pdfLibrary;
+function loadCoursePDFLibrary(){
+  if(typeof PDFLib!=="undefined")return Promise.resolve(PDFLib);
+  return pdfLibrary??=new Promise((resolve,reject)=>{
+    const script=element("script");
+    script.src=pdfLibrarySource;
+    script.onload=()=>resolve(PDFLib);
+    script.onerror=()=>{script.remove();pdfLibrary=null;reject(Error("PDF library unavailable"));};
+    document.head.append(script);
+  });
+}
+function readablePDF(node,blocks){
+  const tag=node.tagName?.toLowerCase();
+  if(!tag||["svg","script","template","audio","button","input","select","textarea","form","progress"].includes(tag))return;
+  if(node.classList.contains("walkthrough")){
+    readablePDF(node.querySelector(".walkthrough-transcript"),blocks);
+    for(const scene of node.querySelectorAll(".board-sketch"))blocks.push({board:scene,text:scene.getAttribute("aria-label")});
+    return;
+  }
+  if(node.classList.contains("game")||node.classList.contains("capstone-workspace")||node.id==="final-assessment-activity")return;
+  if(tag==="img"&&node.classList.contains("claim-form-preview")&&node.getAttribute("src")){
+    blocks.push({image:node.getAttribute("src"),text:node.getAttribute("alt")});return;
+  }
+  if(tag==="table"){
+    for(const row of node.querySelectorAll("tr"))blocks.push({text:[...row.children].map(c=>c.textContent.trim()).join(" | ")});
+    return;
+  }
+  if(["h1","h2","h3","h4","summary","p","dt","dd","figcaption","small"].includes(tag)){
+    const value=node.textContent.trim();
+    if(value)blocks.push({text:value,heading:/^h[1-4]$|^summary$/.test(tag)});
+    return;
+  }
+  if(tag==="li"){
+    const value=[...node.children].length?[...node.children].map(c=>c.textContent.trim()).filter(Boolean).join(" · "):node.textContent.trim();
+    if(value)blocks.push({text:value});return;
+  }
+  for(const child of node.children)readablePDF(child,blocks);
+}
+function pdfAnswers(section){
+  const blocks=[];
+  const p=(text,heading=false)=>{if(text)blocks.push({text,heading});};
+  const response=(label,value)=>p(label+" — "+(value===undefined||value===null||value===""?"No saved answer":value));
+  const ordered=(keys,labels)=>keys?.map((key,i)=>(i+1)+". "+labels[key]?.[0]).join(" · ");
+  function match(key){
+    const activity=deck[key], rights=Object.fromEntries(activity.right);
+    for(const [id,label] of activity.left){
+      response(label,rights[(state.checkedAnswers?.[key]||state.pairs[key])?.[id]]);
+      p("Expected: "+rights[activity.map[id]]);
+    }
+  }
+  function choose(id,prompt,options,correct,why){
+    p(prompt,true);
+    response("Your Answer",options[state.choices[id]]);
+    p("Expected: "+options[correct]);
+    p(why);
+  }
+  if(section==="lifecycle"){
+    p("Claim Lifecycle Order",true);
+    response("Your Sequence",ordered(state.checkedAnswers?.timeline||state.sequence,deck.timeline.nodes));
+    p("Expected: "+ordered(deck.timeline.order,deck.timeline.nodes));
+    p("Claim Form Matching",true);match("forms");
+  }
+  if(section==="queue"){
+    p("Your Work Queue",true);
+    response("Your Order",ordered(state.checkedAnswers?.queue||state.orders.queue,deck.queue.rows));p(deck.queue.success);
+    for(const row of Object.values(deck.queue.rows))p(row.join(" · "));
+  }
+  if(section==="physician"||section==="hospital"){
+    const key=section==="physician"?"phys":"facility",g=deck[key];
+    p(g.summary);
+    for(const [label,value] of g.brief)p(label+" — "+value);
+    for(const [,label,facts,note] of g.evidence){p(label,true);for(const fact of facts)p(fact.join(" — "));p(note);}
+    choose(key,g.prompt,g.answers.map(a=>a[0]),g.correct,g.answers[g.correct][1]);
+  }
+  if(section==="causes"){p("Denial Evidence Matching",true);match("causes");}
+  if(section==="eob"){
+    for(const g of remitSamples){
+      p(g.lane,true);p([g.plan,g.provider,g.claim,day(g.remit),g.status,g.payment].join(" · "));
+      p("Code | Service | Units | Billed | Allowed | Paid | CO Adjustment | Patient Share | Reason");
+      for(const row of g.rows)p(row.map((value,i)=>i>=3&&i<=7?moneyLabel(value):value).join(" | "));
+      for(const row of g.codes)p(row.join(" — "));
+      choose(g.id,g.question,g.options,g.correct,g.why);
+    }
+  }
+  if(section==="money"){
+    for(const g of deck.money){
+      p(g.label,true);p(g.intro);for(const row of g.values)p(row.join(" — "));
+      ["Expected Allowed","Expected Payer Payment","Payment Variance"].forEach((label,i)=>response(label,(state.checkedAnswers?.[g.id]||state.calculations[g.id])?.[i]));
+      p(g.coach);
+    }
+  }
+  if(section==="appeal"){
+    const data=state.appeal||{};
+    readablePDF(id("game-appeal").querySelector(".appeal-study"),blocks);
+    response("Payer Destination",{appeals:facilityAppeal.route,general:"General Correspondence",replacement:"Electronic Replacement Claim"}[data.route]);
+    response("Receipt Deadline",{due:caseDeadline,turnaround:day(14)+" after informal review",first:day(-10)+" (remit date)"}[data.deadline]);
+    ["Issue","Evidence","Requested Result"].forEach((label,i)=>response(label,data["draft"+i]));
+    response("Supporting Records",packetDocs.filter(row=>data.docs?.includes(row[0])).map(row=>row[1]).join(" · "));
+    response("Simulated Receipt",data.receipt);
+  }
+  if(section==="notation"){
+    p("Notation Sequence",true);
+    response("Your Order",ordered(state.checkedAnswers?.note||state.orders.note,deck.note.rows));p(deck.note.success);
+    for(const row of Object.values(deck.note.rows))p(row.slice(0,2).join(" — "));
+    for(const scenario of notationScenarios){
+      const entry=state.structuredNote?.[scenario.id];if(!entry||!Object.keys(entry).length)continue;
+      p(scenario.label,true);
+      response("Completed Action",({done:scenario.action,paid:"Closed as paid",none:"No action taken"})[entry.action]);
+      response("Claim Status",({pending:scenario.pending,resolved:"Final determination and payment confirmed"})[entry.status]);
+      response("Reference",entry.reference);
+      response("TAT",({business:"10 business days from payer acceptance",unknown:"Not provided or confirmed",calendar:"10 calendar days from today"})[entry.tat]);
+      response("Follow-Up",entry.next);
+      if(entry.generated)response("Your Assembled Note",entry.generated);
+    }
+    response("Your Collector Note For P-218",state.note);
+  }
+  if(section==="puzzles"){
+    p("Billing Term Recall",true);
+    for(const [key,item] of Object.entries(billingTerms))if(item.clue){p(item.clue);response("Your Answer",state.termRecall?.answers[key]);p("Expected: "+item.label);}
+    p("Crossword",true);
+    for(const entry of puzzleData.cross.entries){
+      const word=[...entry.word].map((_,i)=>state.crossLetters?.[(entry.row+(entry.down?i:0))+":"+(entry.col+(entry.down?0:i))]||"_").join("");
+      p(entry.number+" "+(entry.down?"Down":"Across")+" · "+entry.clue);
+      response("Your Answer",word.includes("_")&&!/[A-Z]/.test(word)?null:word);p("Expected: "+entry.word);
+    }
+    p("Flip Card Review",true);
+    for(const item of Object.values(billingTerms))p(item.label+" — "+item.definition);
+  }
+  if(section==="quick-check")for(const g of deck.exit){p(g.label,true);choose(g.id,g.prompt,g.answers,g.correct,g.why);}
+  if(section.startsWith("cap-")){
+    const g=capstoneCases()[section==="cap-physician"?0:1],work=state.capstones?.[g.id];
+    p(g.title,true);
+    for(const row of g.queue)p(row.join(" | "));
+    for(const doc of g.docs){
+      p(doc.title+" · "+doc.issuer+" · "+doc.reference,true);
+      for(const row of doc.facts)p(row.join(" — "));
+      if(doc.table){p(doc.table[0].join(" | "));for(const row of doc.table[1])p(row.join(" | "));}
+      for(const line of doc.paragraphs)p(line);
+    }
+    const answers=work?.answers||{};
+    response("Payer Research Channel",{portal:"Payer Portal",contact:"Verified Payer Contact"}[answers.channel]);
+    response("Payer ICN",answers.identity);
+    for(const [key,label,options,expected,why] of g.questions){
+      p(label,true);response("Your Answer",options?options.find(([value])=>value===answers[key])?.[1]:answers[key]);
+      p("Expected: "+(options?options.find(([value])=>value===expected)?.[1]:expected));p(why);
+    }
+    response("Your Priority Rationale",answers.rationale);
+    response("Your Account Note",answers.note);
+    p("Model Account Note",true);p(g.model);
+    for(const [i,criterion] of ["Priority rationale cites timing and what can be acted on now.",...g.rubric].entries())
+      p((work?.review?.[i]?"Checked":"Not Checked")+" · "+criterion);
+  }
+  if(section==="final-assessment"){
+    const submitted=assessment.submissions?.length?assessment.submissions:assessment.submitted?[{answers:assessment.answers}]:[];
+    if(!submitted.length)p("Earlier question-level responses are unavailable in this browser.");
+    for(const [index,entry] of submitted.entries()){
+      p("Saved Attempt "+(index+1)+(Number.isInteger(entry.score)?" · "+assessmentScore(entry.score):""),true);
+      for(const [i,item] of assessmentItems.entries()){
+        p((i+1)+". "+item.prompt,true);response("Your Answer",item.options[entry.answers[i]]);
+        p("Expected: "+item.options[item.correct]);p(item.why);
+      }
+    }
+  }
+  return blocks;
+}
+function coursePDFChapters(){
+  return sections.filter(section=>section.id!=="handoff").map(section=>{
+    const blocks=[];
+    readablePDF(section,blocks);
+    return {title:section.dataset.nav,blocks:blocks.concat(pdfAnswers(section.id))};
+  });
+}
+async function printableBoard(source){
+  if(typeof Image==="undefined"||typeof XMLSerializer==="undefined")return null;
+  const scene=source.cloneNode(true);
+  const [, ,width,height]=scene.getAttribute("viewBox").split(/\s+/).map(Number);
+  scene.setAttribute("width","850");
+  scene.setAttribute("height",String(Math.round(850*height/width)));
+  scene.prepend(svg("rect",{width,height,rx:7,fill:"#142c40",stroke:"none"}));
+  scene.setAttribute("stroke","#9be9d3");
+  for(const node of scene.querySelectorAll(".doodle-beat,.doodle-takeaway,.doodle-emphasis,.doodle-object path,.doodle-link")){
+    node.removeAttribute("visibility");node.removeAttribute("style");
+    if(node.classList.contains("doodle-emphasis"))node.setAttribute("stroke","#ffd684");
+    if(node.classList.contains("doodle-link"))node.setAttribute("stroke","#c0d9dd");
+  }
+  for(const node of scene.querySelectorAll(".chalk-guides,.chalk-marker"))node.remove();
+  for(const rect of scene.querySelectorAll(".chalk-revealed"))rect.setAttribute("width",rect.dataset.width);
+  const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(scene)],{type:"image/svg+xml;charset=utf-8"}));
+  try{
+    const image=await new Promise((resolve,reject)=>{
+      const element=new Image();
+      const timer=setTimeout(()=>reject(Error("Board preview timeout")),4500);
+      element.onload=()=>{clearTimeout(timer);resolve(element);};
+      element.onerror=()=>{clearTimeout(timer);reject(Error("Board preview unavailable"));};
+      element.src=url;
+    });
+    const canvas=document.createElement("canvas");
+    canvas.width=image.width;canvas.height=image.height;
+    canvas.getContext("2d").drawImage(image,0,0);
+    return canvas.toDataURL("image/png");
+  }catch{return null;}finally{URL.revokeObjectURL(url);}
+}
+async function buildCoursePDF(){
+  const {PDFDocument,StandardFonts,rgb}=await loadCoursePDFLibrary();
+  const pdf=await PDFDocument.create();
+  const normal=await pdf.embedFont(StandardFonts.Helvetica),bold=await pdf.embedFont(StandardFonts.HelveticaBold);
+  const ink=rgb(.12,.23,.31),accent=rgb(.69,.30,.10),muted=rgb(.32,.42,.48);
+  const w=595.28,h=841.89, margin=46, usable=w-2*margin;
+  let page,y;
+  let canvas;
+  const clean=value=>String(value).replace(/→/g," > ").replace(/−/g,"-").replace(/↗/g,"").replace(/≠/g," is not equal to ");
+  function measured(text,font,size){
+    try{return font.widthOfTextAtSize(text,size);}catch{
+      canvas??=document.createElement("canvas");
+      const c=canvas.getContext("2d");c.font=size+"px Arial";return c.measureText(text).width;
+    }
+  }
+  async function line(text,x,at,size,font,color){
+    try{page.drawText(text,{x,y:at,size,font,color});}catch{
+      const width=Math.ceil(measured(text,font,size))+2;
+      canvas.width=width*2;canvas.height=Math.ceil(size*3);
+      const c=canvas.getContext("2d");c.scale(2,2);c.font=size+"px Arial";
+      c.fillStyle="#203b4b";c.textBaseline="alphabetic";c.fillText(text,0,size);
+      const image=await pdf.embedPng(canvas.toDataURL("image/png"));
+      page.drawImage(image,{x,y:at-size*.5,width,height:canvas.height/2});
+    }
+  }
+  function newPage(){
+    page=pdf.addPage([w,h]);y=h-61;
+    page.drawRectangle({x:0,y:h-8,width:w,height:8,color:rgb(.10,.31,.34)});
+    page.drawLine({start:{x:margin,y:37},end:{x:w-margin,y:37},thickness:.6,color:rgb(.8,.85,.87)});
+    page.drawText("CLAIM LAB PREP  /  FICTIONAL TRAINING RECORD",{x:margin,y:24,font:normal,size:8,color:muted});
+    page.drawText(String(pdf.getPageCount()),{x:w-margin-15,y:24,font:bold,size:8,color:muted});
+  }
+  function wrap(text,font,size){
+    const rows=[];
+    for(const paragraph of clean(text).split(/\r?\n/)){
+      let row="";
+      for(let word of paragraph.split(/\s+/)){
+        const next=row?row+" "+word:word;
+        if(measured(next,font,size)<=usable){row=next;continue;}
+        if(row)rows.push(row);
+        while(measured(word,font,size)>usable){
+          let cut=1;while(cut<word.length&&measured(word.slice(0,cut+1),font,size)<=usable)cut++;
+          rows.push(word.slice(0,cut));word=word.slice(cut);
+        }
+        row=word;
+      }
+      rows.push(row);
+    }
+    return rows;
+  }
+  async function paragraph(text,heading=false,size=heading?13:10.5){
+    const font=heading?bold:normal;
+    const rows=wrap(text,font,size),step=size+4.5;
+    if(heading&&y<90+step*rows.length)newPage();
+    for(const row of rows){if(y<62)newPage();if(row)await line(row,margin,y,size,font,heading?accent:ink);y-=step;}
+    y-=heading?7:5;
+  }
+  pdf.setTitle("RCM Back End Lab Prep — Course And Answers");
+  pdf.setSubject("Lessons, practice answers and final assessment");
+  newPage();
+  await paragraph("RCM Back End Lab Prep",true,25);
+  await paragraph("Course And Answer Portfolio",true,17);
+  await paragraph(state.completion.name,true,16);
+  await paragraph("Completed "+new Date(state.completion.completedAt).toLocaleDateString()+" · Final assessment "+assessmentScore(state.completion.score));
+  await paragraph("Includes reference material and the saved responses available in this browser. Optional work that was left blank is identified where applicable.");
+  await paragraph("Contents",true,16);
+  const cover=page,contentsY=y;
+  const contents=[];
+  for(const chapter of coursePDFChapters()){
+    newPage();contents.push([chapter.title,pdf.getPageCount()]);
+    await paragraph(chapter.title,true,19);
+    for(const block of chapter.blocks){
+      const imageSource=block.image||(block.board&&await printableBoard(block.board));
+      if(imageSource){
+        const image=await pdf.embedPng(imageSource);
+        const scale=Math.min(usable/image.width,(block.board?194:650)/image.height,1);
+        const height=image.height*scale;
+        if(y-height<80)newPage();
+        page.drawImage(image,{x:margin+(usable-image.width*scale)/2,y:y-height,width:image.width*scale,height});
+        y-=height+10;
+        await paragraph(block.text);
+      }else await paragraph(block.text,block.heading);
+    }
+  }
+  page=cover;y=contentsY;
+  for(const [title,index] of contents)await paragraph(title+"  /  "+index);
+  return pdf.save();
+}
+async function downloadCoursePDF(){
+  const bytes=await buildCoursePDF();
+  const url=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));
+  const a=element("a");
+  a.href=url;a.download="Claim_Lab_Prep_"+learnerFirstName().replace(/[^\p{L}\p{N}]/gu,"")+".pdf";
+  document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
 }
 
 timeline();
@@ -2371,14 +2782,10 @@ capstoneCases().forEach(runCapstone);
 runAssessment();
 const pauseWalkthroughs=setupWalkthroughs();
 setupClaimViewer();
-setupCourseRecord();
+setupCompletion();
 id("model-note").textContent=deck.phys.note;
 id("note-draft").value=state.note;
 id("note-draft").addEventListener("input",e=>{state.note=e.target.value;save();});
-id("save-record").addEventListener("click",()=>{
-  const rows=Object.entries(milestones).map(([k,label])=>(state.done[k]?"Complete":"Not complete")+" · "+label);
-  writeTextFile("Claim_Lab_Prep_Practice_Record.txt",["CLAIM LAB PREP · PRACTICE RECORD","Physician and Hospital Billing","",...rows,"","Independent Case Results",...capstoneReport(),"",assessmentReport(),"","Self-review items are learner-reported. No written notes or responses are included.",""].join("\n"));
-});
 id("print-guide").addEventListener("click",()=>{document.body.classList.add("print-guide");window.print();});
 window.addEventListener("afterprint",()=>document.body.classList.remove("print-guide"));
 const keyMap={lifecycle:"timeline forms",queue:"queue",physician:"phys",hospital:"facility",causes:"causes",money:"money",eob:"eob-p eob-h",appeal:"appeal",notation:"note notebuilder","quick-check":"exit-p exit-h","cap-physician":"cap-phys","cap-hospital":"cap-hosp","final-assessment":"final-assessment"};
@@ -2392,6 +2799,8 @@ for(const section of sections){
 }
 const pagesBySection=Object.fromEntries(sections.map(section=>[section.id,sectionPages(section)]));
 function show(sectionId,page=0,focus=true){
+  if(!state.learnerName&&sectionId!=="start"){requestedLesson={section:sectionId,page};sectionId="start";page=0;}
+  if(!state.learnerName&&sectionId==="start")page=0;
   const index=sections.findIndex(s=>s.id===sectionId);
   if(index<0)return;
   const pages=pagesBySection[sectionId];
@@ -2417,9 +2826,9 @@ function show(sectionId,page=0,focus=true){
       button("Collapse All Reading","button ghost",()=>folds.forEach(fold=>{fold.open=false;})));
   }
   const meter=id("lesson-position");
-  meter.hidden=pages.length<2;
+  meter.hidden=pages.length<2||!state.learnerName;
   meter.replaceChildren(element("span",titleLabel(active.label)),element("span",(position+1)+" / "+pages.length));
-  const pager=id("pager");pager.replaceChildren();
+  const pager=id("pager");pager.replaceChildren();pager.hidden=!state.learnerName;
   if(position>0)pager.append(coursePageLink("← "+pages[position-1].label,sectionId,position-1,"button ghost"));
   else if(index>0){
     const previous=sections[index-1];
